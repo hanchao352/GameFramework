@@ -14,19 +14,22 @@ namespace cfg
 {
 public partial class Tables
 {
-    public demo.TbReward TbReward {get; }
+    public demo.TbStartReward TbStartReward {get; }
+    public demo.TbEndReward TbEndReward {get; }
     public demo.TBItem TBItem {get; }
 
     public Tables(System.Func<string, JSONNode> loader)
     {
-        TbReward = new demo.TbReward(loader("demo_tbreward"));
+        TbStartReward = new demo.TbStartReward(loader("demo_tbstartreward"));
+        TbEndReward = new demo.TbEndReward(loader("demo_tbendreward"));
         TBItem = new demo.TBItem(loader("demo_tbitem"));
         ResolveRef();
     }
     
     private void ResolveRef()
     {
-        TbReward.ResolveRef(this);
+        TbStartReward.ResolveRef(this);
+        TbEndReward.ResolveRef(this);
         TBItem.ResolveRef(this);
     }
 }

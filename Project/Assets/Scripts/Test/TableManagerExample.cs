@@ -75,7 +75,7 @@ public class TableManagerExample : MonoBehaviour
     /// </summary>
     private void TestGetSingleReward()
     {
-        var reward = TableManager.Instance.ConfigTables.TbReward.Get(_testRewardId);
+        var reward = TableManager.Instance.ConfigTables.TbEndReward.Get(_testRewardId);
         if (reward != null)
         {
             Debug.Log($"获取奖励配置成功:");
@@ -95,7 +95,7 @@ public class TableManagerExample : MonoBehaviour
     /// </summary>
     private void TestGetAllRewards()
     {
-        var allRewards = TableManager.Instance.ConfigTables.TbReward.DataList;
+        var allRewards = TableManager.Instance.ConfigTables.TbEndReward.DataList;
         Debug.Log($"总共有 {allRewards.Count} 个奖励配置:");
         
         foreach (var reward in allRewards)
@@ -110,11 +110,11 @@ public class TableManagerExample : MonoBehaviour
     private void TestCheckRewardExists()
     {
         // 测试存在的ID
-        bool exists1 = TableManager.Instance.ConfigTables.TbReward.Get(1001) != null;
+        bool exists1 = TableManager.Instance.ConfigTables.TbEndReward.Get(1001) != null;
         Debug.Log($"奖励ID 1001 是否存在: {exists1}");
         
         // 测试不存在的ID
-        bool exists2 = TableManager.Instance.ConfigTables.TbReward.DataMap.TryGetValue(1002, out _);
+        bool exists2 = TableManager.Instance.ConfigTables.TbEndReward.DataMap.TryGetValue(1002, out _);
         Debug.Log($"奖励ID 9999 是否存在: {exists2}");
     }
     
