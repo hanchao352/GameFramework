@@ -9,3 +9,6 @@ Project/UserSettings
 Project/*.csproj
 *.sln
 Project/.cursor
+Project/App.config
+Project/packages.config
+Project/Project.sln.DotSettings.user
