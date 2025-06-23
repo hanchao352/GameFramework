@@ -7,7 +7,6 @@ using cfg;
 /// </summary>
 public class TableManagerExample : MonoBehaviour
 {
-    [Header("测试配置")]
     [SerializeField] private int _testRewardId = 1001;
 
     void Awake()
@@ -76,7 +75,7 @@ public class TableManagerExample : MonoBehaviour
     /// </summary>
     private void TestGetSingleReward()
     {
-        var reward = TableManager.Instance.GetReward(_testRewardId);
+        var reward = TableManager.Instance.ConfigTables.TbReward.Get(_testRewardId);
         if (reward != null)
         {
             Debug.Log($"获取奖励配置成功:");
@@ -96,7 +95,7 @@ public class TableManagerExample : MonoBehaviour
     /// </summary>
     private void TestGetAllRewards()
     {
-        var allRewards = TableManager.Instance.GetAllRewards();
+        var allRewards = TableManager.Instance.ConfigTables.TbReward.DataList;
         Debug.Log($"总共有 {allRewards.Count} 个奖励配置:");
         
         foreach (var reward in allRewards)
@@ -111,43 +110,14 @@ public class TableManagerExample : MonoBehaviour
     private void TestCheckRewardExists()
     {
         // 测试存在的ID
-        bool exists1 = TableManager.Instance.HasReward(1001);
+        bool exists1 = TableManager.Instance.ConfigTables.TbReward.Get(1001) != null;
         Debug.Log($"奖励ID 1001 是否存在: {exists1}");
         
         // 测试不存在的ID
-        bool exists2 = TableManager.Instance.HasReward(9999);
+        bool exists2 = TableManager.Instance.ConfigTables.TbReward.DataMap.TryGetValue(1002, out _);
         Debug.Log($"奖励ID 9999 是否存在: {exists2}");
     }
     
-    #region 编辑器测试方法
+  
     
-#if UNITY_EDITOR
-    /// <summary>
-    /// 手动测试配置访问（编辑器专用）
-    /// </summary>
-    [ContextMenu("测试配置访问")]
-    public void EditorTestConfigAccess()
-    {
-        if (!TableManager.Instance.IsConfigLoaded)
-        {
-            Debug.LogWarning("配置未加载，请先加载配置");
-            return;
-        }
-        
-        TestConfigAccess();
-    }
-    
-    /// <summary>
-    /// 测试重载配置（编辑器专用）
-    /// </summary>
-    [ContextMenu("测试重载配置")]
-    public void EditorTestReloadConfig()
-    {
-        Debug.Log("开始重载配置...");
-        bool success = TableManager.Instance.ReloadConfiguration();
-        Debug.Log($"配置重载结果: {(success ? "成功" : "失败")}");
-    }
-#endif
-    
-    #endregion
 } 

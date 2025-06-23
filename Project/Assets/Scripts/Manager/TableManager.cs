@@ -18,14 +18,20 @@ public class TableManager : SingletonManager<TableManager>, IGeneric
     /// <summary>
     /// 配置文件目录路径
     /// </summary>
-    [SerializeField]
+#if UNITY_EDITOR
     private string _configDirectory = "../DataTables/output";
+#elif UNITY_ANDROID
+    private string _configDirectory = "DataTables";
+#elif UNITY_IOS
+    private string _configDirectory = "DataTables";
+#elif UNITY_STANDALONE_WIN
+    private string _configDirectory = "DataTables";
+#endif
     
     
     /// <summary>
     /// 是否启用调试日志
     /// </summary>
-    [SerializeField]
     private bool _enableDebugLog = true;
     
     /// <summary>
@@ -42,6 +48,23 @@ public class TableManager : SingletonManager<TableManager>, IGeneric
     /// 配置加载失败事件
     /// </summary>
     public event Action<string> OnConfigLoadFailed;
+    
+    /// <summary>
+    /// 配置文件加载进度事件
+    /// </summary>
+    public event Action<string, int, int> OnConfigLoadProgress;
+    
+    /// <summary>
+    /// 已加载的配置文件列表
+    /// </summary>
+    public List<string> LoadedConfigFiles { get; private set; } = new List<string>();
+    
+    /// <summary>
+    /// 配置文件扩展名过滤
+    /// </summary>
+    private string[] _configFileExtensions = { ".json", ".txt" };
+    
+
 
     #endregion
 
@@ -60,13 +83,15 @@ public class TableManager : SingletonManager<TableManager>, IGeneric
     {
         try
         {
-            LogDebug("开始加载配置数据...");
+            LogDebug($"开始加载配置数据... (平台: {Application.platform})");
             
             // 检查配置目录是否存在
-            string fullPath = GetConfigDirectoryPath();
+            string fullPath = _configDirectory;
+            LogDebug($"使用配置路径: {fullPath}");
+            
             if (!Directory.Exists(fullPath))
             {
-                LogError($"配置目录不存在: {fullPath}");
+                LogError($"配置目录不存在: {fullPath} (平台: {Application.platform})");
                 OnConfigLoadFailed?.Invoke($"配置目录不存在: {fullPath}");
                 return false;
             }
@@ -76,6 +101,7 @@ public class TableManager : SingletonManager<TableManager>, IGeneric
             
             IsConfigLoaded = true;
             LogDebug("配置数据加载完成");
+
             
             // 触发加载完成事件
             OnConfigLoaded?.Invoke();
@@ -92,18 +118,6 @@ public class TableManager : SingletonManager<TableManager>, IGeneric
     }
     
     /// <summary>
-    /// 重新加载配置数据
-    /// </summary>
-    /// <returns>是否重载成功</returns>
-    public bool ReloadConfiguration()
-    {
-        LogDebug("重新加载配置数据...");
-        IsConfigLoaded = false;
-        ConfigTables = null;
-        return LoadConfiguration();
-    }
-    
-    /// <summary>
     /// 配置文件加载器
     /// </summary>
     /// <param name="fileName">文件名</param>
@@ -112,7 +126,7 @@ public class TableManager : SingletonManager<TableManager>, IGeneric
     {
         try
         {
-            string filePath = Path.Combine(GetConfigDirectoryPath(), $"{fileName}.json");
+            string filePath = Path.Combine(_configDirectory, $"{fileName}.json");
             
             if (!File.Exists(filePath))
             {
@@ -139,100 +153,53 @@ public class TableManager : SingletonManager<TableManager>, IGeneric
         }
     }
     
-    /// <summary>
-    /// 获取配置目录的完整路径
-    /// </summary>
-    /// <returns>配置目录路径</returns>
-    private string GetConfigDirectoryPath()
-    {
-        // 支持相对路径和绝对路径
-        if (Path.IsPathRooted(_configDirectory))
-        {
-            return _configDirectory;
-        }
-        else
-        {
-            return Path.Combine(Application.dataPath, "..", _configDirectory);
-        }
-    }
-    
     #endregion
     
-    #region 配置访问接口
     
-    /// <summary>
-    /// 获取奖励配置表
-    /// </summary>
-    public cfg.demo.TbReward GetRewardTable()
-    {
-        if (!IsConfigLoaded)
-        {
-            LogError("配置未加载，无法获取奖励配置表");
-            return null;
-        }
-        return ConfigTables.TbReward;
-    }
-    
-    /// <summary>
-    /// 根据ID获取奖励配置
-    /// </summary>
-    /// <param name="id">奖励ID</param>
-    /// <returns>奖励配置，如果不存在返回null</returns>
-    public cfg.demo.Reward GetReward(int id)
-    {
-        var rewardTable = GetRewardTable();
-        if (rewardTable == null)
-        {
-            return null;
-        }
-
-        if(rewardTable.DataMap.TryGetValue(id, out var reward))
-        {
-            return reward;
-        }
-
-        return null;
-     
-    }
-    
-    /// <summary>
-    /// 检查奖励配置是否存在
-    /// </summary>
-    /// <param name="id">奖励ID</param>
-    /// <returns>是否存在</returns>
-    public bool HasReward(int id)
-    {
-        return GetReward(id) != null;
-    }
-    
-    /// <summary>
-    /// 获取所有奖励配置
-    /// </summary>
-    /// <returns>奖励配置列表</returns>
-    public IReadOnlyList<cfg.demo.Reward> GetAllRewards()
-    {
-        var rewardTable = GetRewardTable();
-        if (rewardTable == null)
-        {
-            return new List<cfg.demo.Reward>();
-        }
-        
-        return rewardTable.DataList;
-    }
-    
-    #endregion
     
     #region 工具方法
     
     /// <summary>
-    /// 设置配置目录路径
+    /// 设置配置目录路径（默认平台）
     /// </summary>
     /// <param name="directory">目录路径</param>
     public void SetConfigDirectory(string directory)
     {
         _configDirectory = directory;
-        LogDebug($"配置目录已设置为: {directory}");
+        LogDebug($"默认配置目录已设置为: {directory}");
     }
+    
+    
+    
+    /// <summary>
+    /// 设置支持的配置文件扩展名
+    /// </summary>
+    /// <param name="extensions">扩展名数组</param>
+    public void SetConfigFileExtensions(string[] extensions)
+    {
+        _configFileExtensions = extensions;
+        LogDebug($"配置文件扩展名已设置为: {string.Join(", ", extensions)}");
+    }
+    
+    /// <summary>
+    /// 获取已加载的配置文件数量
+    /// </summary>
+    /// <returns>已加载的配置文件数量</returns>
+    public int GetLoadedConfigCount()
+    {
+        return LoadedConfigFiles.Count;
+    }
+    
+    /// <summary>
+    /// 检查指定配置文件是否已加载
+    /// </summary>
+    /// <param name="fileName">文件名（不含扩展名）</param>
+    /// <returns>是否已加载</returns>
+    public bool IsConfigFileLoaded(string fileName)
+    {
+        return LoadedConfigFiles.Contains(fileName);
+    }
+    
     
     /// <summary>
     /// 启用或禁用调试日志
@@ -251,7 +218,7 @@ public class TableManager : SingletonManager<TableManager>, IGeneric
     {
         if (_enableDebugLog)
         {
-            Debug.Log($"[CfgManager] {message}");
+            Debug.Log($"[TableManager] {message}");
         }
     }
     
@@ -261,7 +228,7 @@ public class TableManager : SingletonManager<TableManager>, IGeneric
     /// <param name="message">错误信息</param>
     private void LogError(string message)
     {
-        Debug.LogError($"[CfgManager] {message}");
+        Debug.LogError($"[TableManager] {message}");
     }
     
     #endregion
