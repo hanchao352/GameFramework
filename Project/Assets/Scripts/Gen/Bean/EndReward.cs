@@ -11,11 +11,11 @@ using Luban;
 using SimpleJSON;
 
 
-namespace cfg.demo
+namespace cfg.Bean
 {
-public sealed partial class Item : Luban.BeanBase
+public sealed partial class EndReward : Luban.BeanBase
 {
-    public Item(JSONNode _buf) 
+    public EndReward(JSONNode _buf) 
     {
         { if(!_buf["id"].IsNumber) { throw new SerializationException(); }  Id = _buf["id"]; }
         { if(!_buf["name"].IsString) { throw new SerializationException(); }  Name = _buf["name"]; }
@@ -23,9 +23,9 @@ public sealed partial class Item : Luban.BeanBase
         { if(!_buf["count"].IsNumber) { throw new SerializationException(); }  Count = _buf["count"]; }
     }
 
-    public static Item DeserializeItem(JSONNode _buf)
+    public static EndReward DeserializeEndReward(JSONNode _buf)
     {
-        return new demo.Item(_buf);
+        return new Bean.EndReward(_buf);
     }
 
     /// <summary>
@@ -45,7 +45,7 @@ public sealed partial class Item : Luban.BeanBase
     /// </summary>
     public readonly int Count;
    
-    public const int __ID__ = 749625438;
+    public const int __ID__ = -209917140;
     public override int GetTypeId() => __ID__;
 
     public  void ResolveRef(Tables tables)

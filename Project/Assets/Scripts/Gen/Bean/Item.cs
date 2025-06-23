@@ -11,21 +11,21 @@ using Luban;
 using SimpleJSON;
 
 
-namespace cfg.demo
+namespace cfg.Bean
 {
-public sealed partial class StartReward : Luban.BeanBase
+public sealed partial class Item : Luban.BeanBase
 {
-    public StartReward(JSONNode _buf) 
+    public Item(JSONNode _buf) 
     {
         { if(!_buf["id"].IsNumber) { throw new SerializationException(); }  Id = _buf["id"]; }
         { if(!_buf["name"].IsString) { throw new SerializationException(); }  Name = _buf["name"]; }
         { if(!_buf["desc"].IsString) { throw new SerializationException(); }  Desc = _buf["desc"]; }
-        { if(!_buf["path"].IsString) { throw new SerializationException(); }  Path = _buf["path"]; }
+        { if(!_buf["count"].IsNumber) { throw new SerializationException(); }  Count = _buf["count"]; }
     }
 
-    public static StartReward DeserializeStartReward(JSONNode _buf)
+    public static Item DeserializeItem(JSONNode _buf)
     {
-        return new demo.StartReward(_buf);
+        return new Bean.Item(_buf);
     }
 
     /// <summary>
@@ -41,11 +41,11 @@ public sealed partial class StartReward : Luban.BeanBase
     /// </summary>
     public readonly string Desc;
     /// <summary>
-    /// 1
+    /// 个数
     /// </summary>
-    public readonly string Path;
+    public readonly int Count;
    
-    public const int __ID__ = 2053000838;
+    public const int __ID__ = -15203695;
     public override int GetTypeId() => __ID__;
 
     public  void ResolveRef(Tables tables)
@@ -58,7 +58,7 @@ public sealed partial class StartReward : Luban.BeanBase
         + "id:" + Id + ","
         + "name:" + Name + ","
         + "desc:" + Desc + ","
-        + "path:" + Path + ","
+        + "count:" + Count + ","
         + "}";
     }
 }
