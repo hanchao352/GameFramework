@@ -1,0 +1,13 @@
+F:\Game\GameProject\GameServer\Common\bin\Debug\net8.0\Common.deps.json
+F:\Game\GameProject\GameServer\Common\bin\Debug\net8.0\Common.dll
+F:\Game\GameProject\GameServer\Common\bin\Debug\net8.0\Common.pdb
+F:\Game\GameProject\GameServer\Common\obj\Debug\net8.0\Common.csproj.AssemblyReference.cache
+F:\Game\GameProject\GameServer\Common\obj\Debug\net8.0\Common.GeneratedMSBuildEditorConfig.editorconfig
+F:\Game\GameProject\GameServer\Common\obj\Debug\net8.0\Common.AssemblyInfoInputs.cache
+F:\Game\GameProject\GameServer\Common\obj\Debug\net8.0\Common.AssemblyInfo.cs
+F:\Game\GameProject\GameServer\Common\obj\Debug\net8.0\Common.csproj.CoreCompileInputs.cache
+F:\Game\GameProject\GameServer\Common\obj\Debug\net8.0\Common.sourcelink.json
+F:\Game\GameProject\GameServer\Common\obj\Debug\net8.0\Common.dll
+F:\Game\GameProject\GameServer\Common\obj\Debug\net8.0\refint\Common.dll
+F:\Game\GameProject\GameServer\Common\obj\Debug\net8.0\Common.pdb
+F:\Game\GameProject\GameServer\Common\obj\Debug\net8.0\ref\Common.dll

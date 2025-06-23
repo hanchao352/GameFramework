@@ -1,0 +1,161 @@
+syntax = "proto3";
+//required: 必须提供该字段的值，否则该消息将被视为“未初始化”
+//optional：可以设置也可以不设置该字段。如果未设置可选字段值，则使用默认值。
+//repeated：该字段可以重复任意次数（包括零次）。重复值的顺序将保留在 protocol buffer 中。可以将 repeated 字段视为动态大小的数组。
+
+
+import "OptionMsgId.proto";
+import "enumproto.proto";
+import "infoproto.proto";
+//注册账号
+message RegisterRequest {
+  option (msgid) = 10000;
+  string username = 1;
+  string password = 2;
+}
+
+message RegisterResponse {
+  option (msgid) = 10001;
+  NResult result = 1;
+  string msg = 2;
+}
+
+
+
+message LoginRequest {
+  option (msgid) = 10002;
+  string username = 1;
+  string password = 2;
+  optional int32 bigserverid = 3;
+  optional int32 smallserverid = 4;
+
+}
+
+message LoginResponse {
+  option (msgid) = 10003;
+  NResult result = 1;
+  string msg = 2;
+  repeated NEntity rolelist = 3;
+}
+
+message CreateRoleRequest {
+  option (msgid) = 10004;
+  string rolename = 1;
+  GameRace race = 2;
+}
+
+message CreateRoleResponse {
+  option (msgid) = 10005;
+  NResult result = 1;
+  string msg = 2;
+  NEntity roleinfo = 3;
+}
+
+message EnterGameRequest{
+    option (msgid) = 10006;
+    int64 roleId = 1;
+}
+
+message EnterGameResponse{
+
+    option (msgid) = 10007;
+    NResult result = 1;
+    NEntity role = 2;
+    int32 errorCode = 3;
+}
+
+message EnterSceneRequest{
+  option (msgid) = 10008;
+  int32 sceneid = 1;
+   
+}
+message EnterSceneResponse{
+  option (msgid) = 10009;
+  NResult result = 1;
+  int32 errorCode = 2;
+  NEntity role = 3;
+}
+
+message PlayerInfoChangeSync{   
+  option (msgid) = 10010;
+  repeated NEntity role = 1;
+}
+message EntityMoveRequest{
+
+  option (msgid) = 10011;
+  int64 entityId = 1;
+  NVector3 pos = 2;
+  NVector3 dir = 3;
+  int32 speed = 4;
+}
+
+message EntityMoveResponse{
+
+  option (msgid) = 10012;
+  NResult result = 1;
+  int64 entityId = 2;
+  NVector3 pos = 3;
+  NVector3 dir = 4;
+  int32 speed = 5;
+}
+
+//释放技能请求
+message EntityCastSkillRequest{
+
+  option (msgid) = 10013;
+  int64 entityId = 1;
+  int32 skillId = 2;
+  optional int64 targetId = 3;
+  
+}
+
+//释放技能响应
+message EntityCastSkillResponse{
+
+  option (msgid) = 10014;
+  NResult result = 1;
+  int64 entityId = 2;
+  int32 skillId = 3;
+  optional int64 targetId = 4;
+  
+} 
+//同步玩家坐标
+message EntityMoveSync{
+
+  option (msgid) = 10015;
+  int64 entityId = 1;
+  NVector3 pos = 2;
+  NVector3 dir = 3;
+  int32 speed = 4;
+}
+
+//玩家进入场景
+message EntityEnterSceneRequest{
+
+  option (msgid) = 10016;
+  NEntity entity = 1;
+  int32 sceneId = 2;
+}
+//玩家进入场景响应
+message EntityEnterSceneResponse{
+
+  option (msgid) = 10017;
+  NResult result = 1;
+  NEntity entity = 2;
+  int32 sceneId = 3;
+}
+//玩家离开场景请求
+message EntityLeaveSceneRequest{
+
+  option (msgid) = 10018;
+  int64 entityId = 1;
+}
+//玩家离开场景响应
+message EntityLeaveSceneResponse{
+
+  option (msgid) = 10019;
+  NResult result = 1;
+  int64 entityId = 2;
+  int32 sceneId = 3;
+}
+

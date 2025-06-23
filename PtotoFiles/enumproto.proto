@@ -1,0 +1,66 @@
+syntax = "proto3";
+//游戏职业
+enum GameProfession {
+
+  GameProfession_None = 0;
+  //按照上面的前缀格式重新定义,包括注释
+  //战士
+  GameProfession_Warrior = 1;
+  //法师
+  GameProfession_Mage = 2;
+  //牧师
+  GameProfession_Priest = 3;
+  //盗贼
+  GameProfession_Rogue = 4;
+  //猎人
+  GameProfession_Hunter = 5;
+  //德鲁伊
+  GameProfession_Druid = 6;
+  //萨满
+  GameProfession_Shaman = 7;
+  //术士
+  GameProfession_Warlock = 8;
+  //圣骑士
+  GameProfession_Paladin = 9;
+  
+  
+  
+//  //战士
+//  Warrior = 1;
+//  //法师
+//  Mage = 2;
+//  //牧师
+//  Priest = 3;
+//  //盗贼
+//  Rogue = 4;
+//  //猎人
+//  Hunter = 5;
+//  //德鲁伊
+//  Druid = 6;
+//  //萨满
+//  Shaman = 7;
+//  //术士
+//  Warlock = 8;
+//  //圣骑士
+//  Paladin = 9;
+}
+
+//游戏种族
+enum GameRace {
+
+  None = 0;
+ //人类
+ Human = 1;
+ //精灵
+ Elf = 2;
+ //兽人
+ Orc = 3;
+ //亡灵
+ Undead = 4;
+}
+
+enum NResult 
+{
+  Success = 0;
+  Fail = 1;
+}

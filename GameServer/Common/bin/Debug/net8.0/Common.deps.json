@@ -1,0 +1,50 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "Common/1.0.0": {
+        "dependencies": {
+          "Google.Protobuf": "3.31.1",
+          "Grpc.Tools": "2.72.0"
+        },
+        "runtime": {
+          "Common.dll": {}
+        }
+      },
+      "Google.Protobuf/3.31.1": {
+        "runtime": {
+          "lib/net5.0/Google.Protobuf.dll": {
+            "assemblyVersion": "3.31.1.0",
+            "fileVersion": "3.31.1.0"
+          }
+        }
+      },
+      "Grpc.Tools/2.72.0": {}
+    }
+  },
+  "libraries": {
+    "Common/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Google.Protobuf/3.31.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-gSnJbUmGiOTdWddPhqzrEscHq9Ls6sqRDPB9WptckyjTUyx70JOOAaDLkFff8gManZNN3hllQ4aQInnQyq/Z/A==",
+      "path": "google.protobuf/3.31.1",
+      "hashPath": "google.protobuf.3.31.1.nupkg.sha512"
+    },
+    "Grpc.Tools/2.72.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-BCiuQ03EYjLHCo9hqZmY5barsz5vvcz/+/ICt5wCbukaePHZmMPDGelKlkxWx3q+f5xOMNHa9zXQ2N6rQZ4B+w==",
+      "path": "grpc.tools/2.72.0",
+      "hashPath": "grpc.tools.2.72.0.nupkg.sha512"
+    }
+  }
+}

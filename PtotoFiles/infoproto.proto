@@ -1,0 +1,51 @@
+syntax = "proto3";
+//required: 必须提供该字段的值，否则该消息将被视为“未初始化”
+//optional：可以设置也可以不设置该字段。如果未设置可选字段值，则使用默认值。
+//repeated：该字段可以重复任意次数（包括零次）。重复值的顺序将保留在 protocol buffer 中。可以将 repeated 字段视为动态大小的数组。
+import "OptionMsgId.proto";
+import "enumproto.proto";
+
+
+//账号信息
+message NAccountInfo {
+
+    int64 accountId = 1; //账号ID
+    string accountName = 2; //账号名
+    string accountPwd = 3; //账号密码
+  
+  }
+  message NVector3 {
+    int32 x = 1;
+    int32 y = 2;
+    int32 z = 3;
+  }
+//角色信息
+message NEntity {
+  string Name = 1;//名字
+  int32 Level = 2;//等级
+  int64 RoleId = 3;//角色id
+  int32 BigServerId = 4;//大服id
+  int32 SmallServerId = 5;//小服id
+  string Accountid = 6;//账号id
+  GameRace Race = 7;//种族
+  GameProfession Profession = 8;//职业
+  //将后面的重新编号
+  int32 CursceneId = 9;//场景id
+  int32 BeforeSceneId = 10;//上一个场景id
+  NVector3 Pos = 11;//位置
+  int32 Hp = 12;//血量
+  int32 Mp = 13;//魔法值
+  int32 Exp = 14;//经验
+  int32 Gold = 15;//金币
+  int32 Diamond = 16;//钻石
+  NVector3 Dir = 17;//旋转
+  int32 Speed = 28;//速度
+}
+
+message NItem {
+    int64 itemcfgid = 1;
+    int32 itemnum = 2;
+    int32 itemid = 3;
+  
+  }
+
