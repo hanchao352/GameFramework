@@ -49,15 +49,7 @@ public class TableManager : SingletonManager<TableManager>, IGeneric
     /// </summary>
     public event Action<string> OnConfigLoadFailed;
     
-    /// <summary>
-    /// 配置文件加载进度事件
-    /// </summary>
-    public event Action<string, int, int> OnConfigLoadProgress;
     
-    /// <summary>
-    /// 已加载的配置文件列表
-    /// </summary>
-    public List<string> LoadedConfigFiles { get; private set; } = new List<string>();
     
     /// <summary>
     /// 配置文件扩展名过滤
@@ -180,25 +172,7 @@ public class TableManager : SingletonManager<TableManager>, IGeneric
         _configFileExtensions = extensions;
         LogDebug($"配置文件扩展名已设置为: {string.Join(", ", extensions)}");
     }
-    
-    /// <summary>
-    /// 获取已加载的配置文件数量
-    /// </summary>
-    /// <returns>已加载的配置文件数量</returns>
-    public int GetLoadedConfigCount()
-    {
-        return LoadedConfigFiles.Count;
-    }
-    
-    /// <summary>
-    /// 检查指定配置文件是否已加载
-    /// </summary>
-    /// <param name="fileName">文件名（不含扩展名）</param>
-    /// <returns>是否已加载</returns>
-    public bool IsConfigFileLoaded(string fileName)
-    {
-        return LoadedConfigFiles.Contains(fileName);
-    }
+
     
     
     /// <summary>
