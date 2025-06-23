@@ -51,7 +51,7 @@ public abstract class UIBase : IViewGeneric
     // 分离实际的异步创建逻辑
     private async UniTask<GameObject> CreateRootAsync(CancellationToken cancellationToken)
     {
-        // 模拟耗时操作，使用可取消的Delay
+        
         await UniTask.Delay(1000, cancellationToken: cancellationToken);
         
         // 创建UI根对象
