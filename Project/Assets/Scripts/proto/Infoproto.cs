@@ -22,22 +22,21 @@ public static partial class InfoprotoReflection {
   static InfoprotoReflection() {
     byte[] descriptorData = global::System.Convert.FromBase64String(
         string.Concat(
-          "Cg9pbmZvcHJvdG8ucHJvdG8aEU9wdGlvbk1zZ0lkLnByb3RvGg9lbnVtcHJv",
-          "dG8ucHJvdG8iSgoMTkFjY291bnRJbmZvEhEKCWFjY291bnRJZBgBIAEoAxIT",
-          "CgthY2NvdW50TmFtZRgCIAEoCRISCgphY2NvdW50UHdkGAMgASgJIisKCE5W",
-          "ZWN0b3IzEgkKAXgYASABKAUSCQoBeRgCIAEoBRIJCgF6GAMgASgFIuECCgdO",
-          "RW50aXR5EgwKBE5hbWUYASABKAkSDQoFTGV2ZWwYAiABKAUSDgoGUm9sZUlk",
-          "GAMgASgDEhMKC0JpZ1NlcnZlcklkGAQgASgFEhUKDVNtYWxsU2VydmVySWQY",
-          "BSABKAUSEQoJQWNjb3VudGlkGAYgASgJEhcKBFJhY2UYByABKA4yCS5HYW1l",
-          "UmFjZRIjCgpQcm9mZXNzaW9uGAggASgOMg8uR2FtZVByb2Zlc3Npb24SEgoK",
-          "Q3Vyc2NlbmVJZBgJIAEoBRIVCg1CZWZvcmVTY2VuZUlkGAogASgFEhYKA1Bv",
-          "cxgLIAEoCzIJLk5WZWN0b3IzEgoKAkhwGAwgASgFEgoKAk1wGA0gASgFEgsK",
-          "A0V4cBgOIAEoBRIMCgRHb2xkGA8gASgFEg8KB0RpYW1vbmQYECABKAUSFgoD",
-          "RGlyGBEgASgLMgkuTlZlY3RvcjMSDQoFU3BlZWQYHCABKAUiOwoFTkl0ZW0S",
-          "EQoJaXRlbWNmZ2lkGAEgASgDEg8KB2l0ZW1udW0YAiABKAUSDgoGaXRlbWlk",
-          "GAMgASgFYgZwcm90bzM="));
+          "Cg9pbmZvcHJvdG8ucHJvdG8aD2VudW1wcm90by5wcm90byJKCgxOQWNjb3Vu",
+          "dEluZm8SEQoJYWNjb3VudElkGAEgASgDEhMKC2FjY291bnROYW1lGAIgASgJ",
+          "EhIKCmFjY291bnRQd2QYAyABKAkiKwoITlZlY3RvcjMSCQoBeBgBIAEoBRIJ",
+          "CgF5GAIgASgFEgkKAXoYAyABKAUi4QIKB05FbnRpdHkSDAoETmFtZRgBIAEo",
+          "CRINCgVMZXZlbBgCIAEoBRIOCgZSb2xlSWQYAyABKAMSEwoLQmlnU2VydmVy",
+          "SWQYBCABKAUSFQoNU21hbGxTZXJ2ZXJJZBgFIAEoBRIRCglBY2NvdW50aWQY",
+          "BiABKAkSFwoEUmFjZRgHIAEoDjIJLkdhbWVSYWNlEiMKClByb2Zlc3Npb24Y",
+          "CCABKA4yDy5HYW1lUHJvZmVzc2lvbhISCgpDdXJzY2VuZUlkGAkgASgFEhUK",
+          "DUJlZm9yZVNjZW5lSWQYCiABKAUSFgoDUG9zGAsgASgLMgkuTlZlY3RvcjMS",
+          "CgoCSHAYDCABKAUSCgoCTXAYDSABKAUSCwoDRXhwGA4gASgFEgwKBEdvbGQY",
+          "DyABKAUSDwoHRGlhbW9uZBgQIAEoBRIWCgNEaXIYESABKAsyCS5OVmVjdG9y",
+          "MxINCgVTcGVlZBgcIAEoBSI7CgVOSXRlbRIRCglpdGVtY2ZnaWQYASABKAMS",
+          "DwoHaXRlbW51bRgCIAEoBRIOCgZpdGVtaWQYAyABKAViBnByb3RvMw=="));
     descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-        new pbr::FileDescriptor[] { global::OptionMsgIdReflection.Descriptor, global::EnumprotoReflection.Descriptor, },
+        new pbr::FileDescriptor[] { global::EnumprotoReflection.Descriptor, },
         new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
           new pbr::GeneratedClrTypeInfo(typeof(global::NAccountInfo), global::NAccountInfo.Parser, new[]{ "AccountId", "AccountName", "AccountPwd" }, null, null, null, null),
           new pbr::GeneratedClrTypeInfo(typeof(global::NVector3), global::NVector3.Parser, new[]{ "X", "Y", "Z" }, null, null, null, null),

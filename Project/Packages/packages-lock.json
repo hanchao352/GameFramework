@@ -23,14 +23,6 @@
         "com.unity.ugui": "1.0.0"
       }
     },
-    "com.boxqkrtm.ide.cursor": {
-      "version": "file:com.unity.ide.cursor",
-      "depth": 0,
-      "source": "embedded",
-      "dependencies": {
-        "com.unity.test-framework": "1.1.9"
-      }
-    },
     "com.code-philosophy.luban": {
       "version": "file:luban_unity",
       "depth": 0,
@@ -44,6 +36,15 @@
       "dependencies": {
         "com.unity.modules.animation": "1.0.0"
       }
+    },
+    "com.paps.unity-toolbar-extender-ui-toolkit": {
+      "version": "2.0.0",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.serialization": "3.1.2"
+      },
+      "url": "https://registry.npmjs.org"
     },
     "com.tuyoogame.yooasset": {
       "version": "2.3.10",
@@ -235,6 +236,16 @@
       "dependencies": {
         "com.unity.test-framework": "1.4.5",
         "com.unity.modules.assetbundle": "1.0.0"
+      },
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.serialization": {
+      "version": "3.1.2",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.collections": "2.4.2",
+        "com.unity.burst": "1.7.2"
       },
       "url": "https://packages.unity.com"
     },
