@@ -23,6 +23,14 @@
         "com.unity.ugui": "1.0.0"
       }
     },
+    "com.boxqkrtm.ide.cursor": {
+      "version": "file:com.unity.ide.cursor",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {
+        "com.unity.test-framework": "1.1.9"
+      }
+    },
     "com.code-philosophy.luban": {
       "version": "file:luban_unity",
       "depth": 0,
