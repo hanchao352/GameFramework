@@ -8,22 +8,21 @@
 //------------------------------------------------------------------------------
 
 using Luban;
-using SimpleJSON;
 
 
 namespace cfg.Bean
 {
 public sealed partial class StartReward : Luban.BeanBase
 {
-    public StartReward(JSONNode _buf) 
+    public StartReward(ByteBuf _buf) 
     {
-        { if(!_buf["id"].IsNumber) { throw new SerializationException(); }  Id = _buf["id"]; }
-        { if(!_buf["name"].IsString) { throw new SerializationException(); }  Name = _buf["name"]; }
-        { if(!_buf["desc"].IsString) { throw new SerializationException(); }  Desc = _buf["desc"]; }
-        { if(!_buf["path"].IsString) { throw new SerializationException(); }  Path = _buf["path"]; }
+        Id = _buf.ReadInt();
+        Name = _buf.ReadString();
+        Desc = _buf.ReadString();
+        Path = _buf.ReadString();
     }
 
-    public static StartReward DeserializeStartReward(JSONNode _buf)
+    public static StartReward DeserializeStartReward(ByteBuf _buf)
     {
         return new Bean.StartReward(_buf);
     }

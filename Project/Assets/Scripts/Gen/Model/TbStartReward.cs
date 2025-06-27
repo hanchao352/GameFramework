@@ -8,7 +8,6 @@
 //------------------------------------------------------------------------------
 
 using Luban;
-using SimpleJSON;
 
 
 namespace cfg.Model
@@ -18,15 +17,15 @@ public partial class TbStartReward
     private readonly System.Collections.Generic.Dictionary<int, Bean.StartReward> _dataMap;
     private readonly System.Collections.Generic.List<Bean.StartReward> _dataList;
     
-    public TbStartReward(JSONNode _buf)
+    public TbStartReward(ByteBuf _buf)
     {
         _dataMap = new System.Collections.Generic.Dictionary<int, Bean.StartReward>();
         _dataList = new System.Collections.Generic.List<Bean.StartReward>();
         
-        foreach(JSONNode _ele in _buf.Children)
+        for(int n = _buf.ReadSize() ; n > 0 ; --n)
         {
             Bean.StartReward _v;
-            { if(!_ele.IsObject) { throw new SerializationException(); }  _v = global::cfg.Bean.StartReward.DeserializeStartReward(_ele);  }
+            _v = global::cfg.Bean.StartReward.DeserializeStartReward(_buf);
             _dataList.Add(_v);
             _dataMap.Add(_v.Id, _v);
         }

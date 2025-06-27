@@ -8,7 +8,6 @@
 //------------------------------------------------------------------------------
 
 using Luban;
-using SimpleJSON;
 
 
 namespace cfg.Model
@@ -18,15 +17,15 @@ public partial class TBItem
     private readonly System.Collections.Generic.Dictionary<int, Bean.Item> _dataMap;
     private readonly System.Collections.Generic.List<Bean.Item> _dataList;
     
-    public TBItem(JSONNode _buf)
+    public TBItem(ByteBuf _buf)
     {
         _dataMap = new System.Collections.Generic.Dictionary<int, Bean.Item>();
         _dataList = new System.Collections.Generic.List<Bean.Item>();
         
-        foreach(JSONNode _ele in _buf.Children)
+        for(int n = _buf.ReadSize() ; n > 0 ; --n)
         {
             Bean.Item _v;
-            { if(!_ele.IsObject) { throw new SerializationException(); }  _v = global::cfg.Bean.Item.DeserializeItem(_ele);  }
+            _v = global::cfg.Bean.Item.DeserializeItem(_buf);
             _dataList.Add(_v);
             _dataMap.Add(_v.Id, _v);
         }

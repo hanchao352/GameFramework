@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using cfg;
+using Luban;
 
 public class TableManager : SingletonManager<TableManager>, IGeneric
 {
@@ -19,7 +20,7 @@ public class TableManager : SingletonManager<TableManager>, IGeneric
     /// 配置文件目录路径
     /// </summary>
 #if UNITY_EDITOR
-    private string _configDirectory = "../DataTables/output";
+    private string _configDirectory = Application.dataPath + "/Res/Config";
 #elif UNITY_ANDROID
     private string _configDirectory = "DataTables";
 #elif UNITY_IOS
@@ -89,7 +90,7 @@ public class TableManager : SingletonManager<TableManager>, IGeneric
             }
             
             // 创建配置表实例
-            ConfigTables = new Tables(LoadConfigFile);
+            ConfigTables = new Tables(LoadConfigFileByBuf);
             
             IsConfigLoaded = true;
             LogDebug("配置数据加载完成");
@@ -126,7 +127,12 @@ public class TableManager : SingletonManager<TableManager>, IGeneric
                 throw new FileNotFoundException($"配置文件不存在: {filePath}");
             }
             
+            
+            
+            
             string jsonContent = File.ReadAllText(filePath);
+            
+            
             JSONNode jsonNode = JSON.Parse(jsonContent);
             
             if (jsonNode == null)
@@ -137,6 +143,39 @@ public class TableManager : SingletonManager<TableManager>, IGeneric
             
             LogDebug($"成功加载配置文件: {fileName}.json");
             return jsonNode;
+        }
+        catch (Exception ex)
+        {
+            LogError($"加载配置文件 {fileName} 失败: {ex.Message}");
+            throw;
+        }
+    }
+    
+    private ByteBuf LoadConfigFileByBuf(string fileName)
+    {
+        try
+        {
+            string filePath = Path.Combine(_configDirectory, $"{fileName}.bytes");
+            
+            if (!File.Exists(filePath))
+            {
+                LogError($"配置文件不存在: {filePath}");
+                throw new FileNotFoundException($"配置文件不存在: {filePath}");
+            }
+            
+            
+            
+            
+            byte[] bytes = File.ReadAllBytes(filePath);
+            
+            if (bytes == null)
+            {
+                LogError($"配置文件解析失败: {filePath}");
+                throw new InvalidDataException($"配置文件解析失败: {filePath}");
+            }
+            
+            LogDebug($"成功加载配置文件: {fileName}.bytes");
+            return new ByteBuf(bytes);
         }
         catch (Exception ex)
         {

@@ -4,10 +4,10 @@ set CONF_ROOT=%WORKSPACE%\DataTables
 
 dotnet %LUBAN_DLL% ^
     -t client^
-    -c cs-simple-json ^
-    -d json ^
+    -c cs-bin ^
+    -d bin ^
     --conf %CONF_ROOT%\luban.conf ^
     -x outputCodeDir=Project\Assets\Scripts\Gen ^
-    -x outputDataDir=%CONF_ROOT%\output
+    -x outputDataDir=Project\Assets\Res\Config
 
 pause

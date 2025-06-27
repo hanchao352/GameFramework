@@ -114,7 +114,7 @@ public class TableManagerExample : MonoBehaviour
         Debug.Log($"奖励ID 1001 是否存在: {exists1}");
         
         // 测试不存在的ID
-        bool exists2 = TableManager.Instance.ConfigTables.TbEndReward.DataMap.TryGetValue(1002, out _);
+        bool exists2 = TableManager.Instance.ConfigTables.TbEndReward.DataMap.TryGetValue(9999, out _);
         Debug.Log($"奖励ID 9999 是否存在: {exists2}");
     }
     

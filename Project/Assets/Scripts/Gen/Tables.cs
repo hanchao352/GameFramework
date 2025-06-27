@@ -8,7 +8,6 @@
 //------------------------------------------------------------------------------
 
 using Luban;
-using SimpleJSON;
 
 namespace cfg
 {
@@ -18,7 +17,7 @@ public partial class Tables
     public Model.TbEndReward TbEndReward {get; }
     public Model.TBItem TBItem {get; }
 
-    public Tables(System.Func<string, JSONNode> loader)
+    public Tables(System.Func<string, ByteBuf> loader)
     {
         TbStartReward = new Model.TbStartReward(loader("model_tbstartreward"));
         TbEndReward = new Model.TbEndReward(loader("model_tbendreward"));
