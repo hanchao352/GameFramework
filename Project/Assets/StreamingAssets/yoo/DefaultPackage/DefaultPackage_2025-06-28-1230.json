@@ -1,0 +1,310 @@
+{
+    "FileVersion": "2.3.1",
+    "EnableAddressable": false,
+    "LocationToLower": false,
+    "IncludeAssetGUID": false,
+    "OutputNameStyle": 0,
+    "BuildBundleType": 2,
+    "BuildPipeline": "ScriptableBuildPipeline",
+    "PackageName": "DefaultPackage",
+    "PackageVersion": "2025-06-28-1230",
+    "PackageNote": "2025/6/28 20:31:04",
+    "AssetList": [
+        {
+            "Address": "",
+            "AssetPath": "Assets/Res/Atlas/test.spriteatlas",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 0,
+            "DependBundleIDs": [
+                13
+            ]
+        },
+        {
+            "Address": "",
+            "AssetPath": "Assets/Res/Fonts/msyh.ttc",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 1,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "",
+            "AssetPath": "Assets/Res/Fonts/msyhbd.ttc",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 2,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "",
+            "AssetPath": "Assets/Res/Fonts/msyhl.ttc",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 3,
+            "DependBundleIDs": []
+        },
+        {
+            "Address": "",
+            "AssetPath": "Assets/Res/Fonts/msyhSDF.asset",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 4,
+            "DependBundleIDs": [
+                1,
+                14
+            ]
+        },
+        {
+            "Address": "",
+            "AssetPath": "Assets/Res/Scene/AnimancerTest.unity",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 5,
+            "DependBundleIDs": [
+                14
+            ]
+        },
+        {
+            "Address": "",
+            "AssetPath": "Assets/Res/Scene/Load.unity",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 6,
+            "DependBundleIDs": [
+                14
+            ]
+        },
+        {
+            "Address": "",
+            "AssetPath": "Assets/Res/Scene/Main.unity",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 7,
+            "DependBundleIDs": [
+                14
+            ]
+        },
+        {
+            "Address": "",
+            "AssetPath": "Assets/Res/Scene/MainCity.unity",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 8,
+            "DependBundleIDs": [
+                14
+            ]
+        },
+        {
+            "Address": "",
+            "AssetPath": "Assets/Res/Scene/TestGameLaunch.unity",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 9,
+            "DependBundleIDs": [
+                14
+            ]
+        },
+        {
+            "Address": "",
+            "AssetPath": "Assets/Res/Scene/TestLoadScene.unity",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 10,
+            "DependBundleIDs": [
+                14
+            ]
+        },
+        {
+            "Address": "",
+            "AssetPath": "Assets/Res/Scene/TimeLineScene.unity",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 11,
+            "DependBundleIDs": [
+                14
+            ]
+        },
+        {
+            "Address": "",
+            "AssetPath": "Assets/Res/UI/window.prefab",
+            "AssetGUID": "",
+            "AssetTags": [],
+            "BundleID": 12,
+            "DependBundleIDs": []
+        }
+    ],
+    "BundleList": [
+        {
+            "BundleName": "assets_res_atlas_test.bundle",
+            "UnityCRC": 1369581202,
+            "FileHash": "47d8f8e74e44ce8e9499480050a6ef36",
+            "FileCRC": "cde0ff3c",
+            "FileSize": 382468,
+            "Encrypted": false,
+            "Tags": [],
+            "DependBundleIDs": [
+                13
+            ]
+        },
+        {
+            "BundleName": "assets_res_fonts_msyh.bundle",
+            "UnityCRC": 1535957595,
+            "FileHash": "5da1ad054bed7d327dd1cb36b5bf66c1",
+            "FileCRC": "9cfca6b1",
+            "FileSize": 13642658,
+            "Encrypted": false,
+            "Tags": [],
+            "DependBundleIDs": []
+        },
+        {
+            "BundleName": "assets_res_fonts_msyhbd.bundle",
+            "UnityCRC": 3599075672,
+            "FileHash": "9a8735275d528a202287d013cf78878c",
+            "FileCRC": "3382991e",
+            "FileSize": 11733999,
+            "Encrypted": false,
+            "Tags": [],
+            "DependBundleIDs": []
+        },
+        {
+            "BundleName": "assets_res_fonts_msyhl.bundle",
+            "UnityCRC": 3022062742,
+            "FileHash": "8298f0c245a9e6fef1643d7a79388bf5",
+            "FileCRC": "67377624",
+            "FileSize": 8242061,
+            "Encrypted": false,
+            "Tags": [],
+            "DependBundleIDs": []
+        },
+        {
+            "BundleName": "assets_res_fonts_msyhsdf.bundle",
+            "UnityCRC": 3897711843,
+            "FileHash": "a4e0e475e13f01f7ca9448d94bbc487f",
+            "FileCRC": "a6a77879",
+            "FileSize": 8859737,
+            "Encrypted": false,
+            "Tags": [],
+            "DependBundleIDs": [
+                1,
+                14
+            ]
+        },
+        {
+            "BundleName": "assets_res_scene_animancertest.bundle",
+            "UnityCRC": 583123740,
+            "FileHash": "aab98bdf8f74425398a20dd9c507181c",
+            "FileCRC": "edf5be2b",
+            "FileSize": 7821,
+            "Encrypted": false,
+            "Tags": [],
+            "DependBundleIDs": [
+                14
+            ]
+        },
+        {
+            "BundleName": "assets_res_scene_load.bundle",
+            "UnityCRC": 2409888097,
+            "FileHash": "e68a2f474a52a335b531a303cb9e59e1",
+            "FileCRC": "4b3c7189",
+            "FileSize": 7405,
+            "Encrypted": false,
+            "Tags": [],
+            "DependBundleIDs": [
+                14
+            ]
+        },
+        {
+            "BundleName": "assets_res_scene_main.bundle",
+            "UnityCRC": 3862387504,
+            "FileHash": "c0738a6d081b06b4e651f06529dd3787",
+            "FileCRC": "3cf0b00b",
+            "FileSize": 7974,
+            "Encrypted": false,
+            "Tags": [],
+            "DependBundleIDs": [
+                14
+            ]
+        },
+        {
+            "BundleName": "assets_res_scene_maincity.bundle",
+            "UnityCRC": 3487821755,
+            "FileHash": "113db1692fae15d50fdb5b0793db8550",
+            "FileCRC": "dce607be",
+            "FileSize": 8717,
+            "Encrypted": false,
+            "Tags": [],
+            "DependBundleIDs": [
+                14
+            ]
+        },
+        {
+            "BundleName": "assets_res_scene_testgamelaunch.bundle",
+            "UnityCRC": 2287959059,
+            "FileHash": "225782b6bba668f3417d1038ca83e178",
+            "FileCRC": "030d5c9b",
+            "FileSize": 8199,
+            "Encrypted": false,
+            "Tags": [],
+            "DependBundleIDs": [
+                14
+            ]
+        },
+        {
+            "BundleName": "assets_res_scene_testloadscene.bundle",
+            "UnityCRC": 148715462,
+            "FileHash": "a0b0a901fd38183bd04103dfeefe69d5",
+            "FileCRC": "660e7be0",
+            "FileSize": 9770,
+            "Encrypted": false,
+            "Tags": [],
+            "DependBundleIDs": [
+                14
+            ]
+        },
+        {
+            "BundleName": "assets_res_scene_timelinescene.bundle",
+            "UnityCRC": 3792753642,
+            "FileHash": "bd2229e1359fba1f0f51ebdca78b873d",
+            "FileCRC": "2360d49a",
+            "FileSize": 7416,
+            "Encrypted": false,
+            "Tags": [],
+            "DependBundleIDs": [
+                14
+            ]
+        },
+        {
+            "BundleName": "assets_res_ui_window.bundle",
+            "UnityCRC": 2864463485,
+            "FileHash": "ecfbbceca01457bc5da45a940b4f96f6",
+            "FileCRC": "c957252c",
+            "FileSize": 3666,
+            "Encrypted": false,
+            "Tags": [],
+            "DependBundleIDs": []
+        },
+        {
+            "BundleName": "share_assets_res_png.bundle",
+            "UnityCRC": 3508216897,
+            "FileHash": "45e187d8dddc5eaa50e8dd3afd1a3d53",
+            "FileCRC": "7a83dbed",
+            "FileSize": 20897,
+            "Encrypted": false,
+            "Tags": [],
+            "DependBundleIDs": [
+                0
+            ]
+        },
+        {
+            "BundleName": "unityshaders.bundle",
+            "UnityCRC": 1508584640,
+            "FileHash": "23d84f3574f28923e8b064ce950af3b6",
+            "FileCRC": "6b08589f",
+            "FileSize": 215258,
+            "Encrypted": false,
+            "Tags": [],
+            "DependBundleIDs": []
+        }
+    ]
+}

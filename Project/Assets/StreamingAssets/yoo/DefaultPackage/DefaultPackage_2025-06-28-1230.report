@@ -1,0 +1,859 @@
+{
+    "Summary": {
+        "YooVersion": "2.3.10",
+        "UnityVersion": "6000.0.51f1",
+        "BuildDate": "2025/6/28 20:31:32",
+        "BuildSeconds": 26,
+        "BuildTarget": 19,
+        "BuildPipeline": "ScriptableBuildPipeline",
+        "BuildBundleType": 2,
+        "BuildPackageName": "DefaultPackage",
+        "BuildPackageVersion": "2025-06-28-1230",
+        "BuildPackageNote": "2025/6/28 20:31:04",
+        "UniqueBundleName": false,
+        "EnableAddressable": false,
+        "LocationToLower": false,
+        "IncludeAssetGUID": false,
+        "AutoCollectShaders": true,
+        "IgnoreRuleName": "YooAsset.Editor.NormalIgnoreRule",
+        "ClearBuildCacheFiles": false,
+        "UseAssetDependencyDB": false,
+        "EnableSharePackRule": true,
+        "SingleReferencedPackAlone": true,
+        "EncryptionClassName": "null",
+        "FileNameStyle": 0,
+        "CompressOption": 2,
+        "DisableWriteTypeTree": false,
+        "IgnoreTypeTreeChanges": true,
+        "WriteLinkXML": true,
+        "CacheServerHost": "",
+        "CacheServerPort": 0,
+        "BuiltinShadersBundleName": "unityshaders.bundle",
+        "MonoScriptsBundleName": "",
+        "AssetFileTotalCount": 60,
+        "MainAssetTotalCount": 13,
+        "AllBundleTotalCount": 15,
+        "AllBundleTotalSize": 43158046,
+        "EncryptedBundleTotalCount": 0,
+        "EncryptedBundleTotalSize": 0
+    },
+    "AssetInfos": [
+        {
+            "Address": "",
+            "AssetPath": "Assets/Res/Atlas/test.spriteatlas",
+            "AssetGUID": "c7e494d3475b2f64a8eab0c85e7a688a",
+            "AssetTags": [],
+            "MainBundleName": "assets_res_atlas_test.bundle",
+            "MainBundleSize": 382468,
+            "DependAssets": [
+                {
+                    "AssetPath": "Assets/Res/PNG/+.png",
+                    "AssetGUID": "9c23d9241753c024c9dd49510b117b99"
+                },
+                {
+                    "AssetPath": "Assets/Res/PNG/下边条1.png",
+                    "AssetGUID": "a541d5cfeb3cb2a4b99a3a3222bde951"
+                },
+                {
+                    "AssetPath": "Assets/Res/PNG/主角 拆分 拷贝.png",
+                    "AssetGUID": "6db2b1d0b663afc418b7ddba5a494a64"
+                },
+                {
+                    "AssetPath": "Assets/Res/PNG/图层 12.png",
+                    "AssetGUID": "7adeb9e53d114a142941fdfb9a1e8cee"
+                },
+                {
+                    "AssetPath": "Assets/Res/PNG/图层 20 拷贝 2.png",
+                    "AssetGUID": "7d1397c197d41c6429ba1dc196624152"
+                },
+                {
+                    "AssetPath": "Assets/Res/PNG/图层 20 拷贝 4.png",
+                    "AssetGUID": "e02a89a08ea784945a4e337a963c5ecd"
+                },
+                {
+                    "AssetPath": "Assets/Res/PNG/图层 20 拷贝 5.png",
+                    "AssetGUID": "f0b49d3dfe2479f42a1f2f6807cdf8ae"
+                },
+                {
+                    "AssetPath": "Assets/Res/PNG/图层 23.png",
+                    "AssetGUID": "f2ab31ed6e054ca4c80099eb05a5e70e"
+                },
+                {
+                    "AssetPath": "Assets/Res/PNG/图层 32 拷贝 2.png",
+                    "AssetGUID": "d4271c1a0fc996b4ea398ede27f42a1a"
+                },
+                {
+                    "AssetPath": "Assets/Res/PNG/图层 32 拷贝 3.png",
+                    "AssetGUID": "8b4bad0bc6efeba4a8933e942d6e61d3"
+                },
+                {
+                    "AssetPath": "Assets/Res/PNG/图层 32 拷贝 4.png",
+                    "AssetGUID": "ef066d3a50a4e1545be5642d1cde8110"
+                },
+                {
+                    "AssetPath": "Assets/Res/PNG/图层 34.png",
+                    "AssetGUID": "52546b5a9bae6064f9e9fa8304e5a7d3"
+                },
+                {
+                    "AssetPath": "Assets/Res/PNG/图层 35.png",
+                    "AssetGUID": "77843f287cd78c246943481066416b45"
+                },
+                {
+                    "AssetPath": "Assets/Res/PNG/图层 36.png",
+                    "AssetGUID": "49d9a3bd1c4f10743bb96933498e91ad"
+                },
+                {
+                    "AssetPath": "Assets/Res/PNG/图层 39.png",
+                    "AssetGUID": "3dc90b7d641f42f408fdb23deddc5776"
+                },
+                {
+                    "AssetPath": "Assets/Res/PNG/图层 41.png",
+                    "AssetGUID": "9508370f7bd739c40980a941a6c42e02"
+                },
+                {
+                    "AssetPath": "Assets/Res/PNG/图层 43.png",
+                    "AssetGUID": "f671c63b0109aac4b8c798c9615c8ee5"
+                },
+                {
+                    "AssetPath": "Assets/Res/PNG/图层 5.png",
+                    "AssetGUID": "bc8720a6af2c9624aa2c5b1a11c2aad6"
+                },
+                {
+                    "AssetPath": "Assets/Res/PNG/图层 7 拷贝 2.png",
+                    "AssetGUID": "4d9796f6e3e049340b12c1e8ec0fea63"
+                },
+                {
+                    "AssetPath": "Assets/Res/PNG/图层 7 拷贝.png",
+                    "AssetGUID": "8def21c2d8015fd40883735af3de72ea"
+                },
+                {
+                    "AssetPath": "Assets/Res/PNG/图层 7.png",
+                    "AssetGUID": "ff05cd3f85b49574bb6ad06809f74e3f"
+                },
+                {
+                    "AssetPath": "Assets/Res/PNG/图层 727.png",
+                    "AssetGUID": "53ac0fc747adec444bb76b03ec543668"
+                },
+                {
+                    "AssetPath": "Assets/Res/PNG/图层 728.png",
+                    "AssetGUID": "253f7f2490a461645b8b6046b482db92"
+                },
+                {
+                    "AssetPath": "Assets/Res/PNG/图层 729.png",
+                    "AssetGUID": "132d05ebee32abc4285d463ed19746b6"
+                },
+                {
+                    "AssetPath": "Assets/Res/PNG/图层 730.png",
+                    "AssetGUID": "a6d7ffcc2c21bb34f999f8562dfd8ea9"
+                },
+                {
+                    "AssetPath": "Assets/Res/PNG/图层 731.png",
+                    "AssetGUID": "6d35b142f69c604478c71343146b8458"
+                },
+                {
+                    "AssetPath": "Assets/Res/PNG/图层 732.png",
+                    "AssetGUID": "245480185716bca4b93e55e61b51d5e7"
+                },
+                {
+                    "AssetPath": "Assets/Res/PNG/图层 733 拷贝 12.png",
+                    "AssetGUID": "2fb78f480bb34d44088f4fb8ee2fcd2d"
+                },
+                {
+                    "AssetPath": "Assets/Res/PNG/图层 733.png",
+                    "AssetGUID": "cfaa555e50337c141ae23ca5c7bf4651"
+                },
+                {
+                    "AssetPath": "Assets/Res/PNG/图层 8.png",
+                    "AssetGUID": "e8c7b3a799216de46880bf7793c62f00"
+                },
+                {
+                    "AssetPath": "Assets/Res/PNG/宠物图标 拷贝.png",
+                    "AssetGUID": "c5160744a6b51ad48b9d79710b55244f"
+                },
+                {
+                    "AssetPath": "Assets/Res/PNG/无装备底板.png",
+                    "AssetGUID": "e8b26a4052a982345bf80a2c0e6948c4"
+                },
+                {
+                    "AssetPath": "Assets/Res/PNG/时装_入口_图标.png",
+                    "AssetGUID": "02c4e4ae2f19069498c0bd48c76dbdc4"
+                },
+                {
+                    "AssetPath": "Assets/Res/PNG/武器图鉴 拷贝.png",
+                    "AssetGUID": "fb7a6c2a081db1648a3603c5821611e0"
+                },
+                {
+                    "AssetPath": "Assets/Res/PNG/矩形 697 拷贝 2.png",
+                    "AssetGUID": "24466e1d7f9e3134ea739f761eb1cd3d"
+                },
+                {
+                    "AssetPath": "Assets/Res/PNG/矩形 697 拷贝.png",
+                    "AssetGUID": "d70d5f41cb75d234db6543297372fcab"
+                },
+                {
+                    "AssetPath": "Assets/Res/PNG/矩形 697.png",
+                    "AssetGUID": "6a8362f337d1252409f998b03c6d79fc"
+                },
+                {
+                    "AssetPath": "Assets/Res/PNG/组 1.png",
+                    "AssetGUID": "9c9f02ac1f34f334c9f5636a947a3754"
+                },
+                {
+                    "AssetPath": "Assets/Res/PNG/组 11.png",
+                    "AssetGUID": "5798991f09b094a4e8e3ba67c47151e5"
+                },
+                {
+                    "AssetPath": "Assets/Res/PNG/组 111 拷贝 2.png",
+                    "AssetGUID": "521692bf979748d4bbceff02cbb817e2"
+                },
+                {
+                    "AssetPath": "Assets/Res/PNG/背景.png",
+                    "AssetGUID": "71a9240b3308dcf49b67f327e6f8ad59"
+                },
+                {
+                    "AssetPath": "Assets/Res/PNG/藏品ICON.png",
+                    "AssetGUID": "91b44b348e331c74f83714bf5ba40f61"
+                },
+                {
+                    "AssetPath": "Assets/Res/PNG/装备.png",
+                    "AssetGUID": "186d078adb58d014ab485b99061efd20"
+                },
+                {
+                    "AssetPath": "Assets/Res/PNG/详情.png",
+                    "AssetGUID": "c24a7c9936881784f92e3dd8f217676f"
+                },
+                {
+                    "AssetPath": "Assets/Res/PNG/锤子_材料.png",
+                    "AssetGUID": "80859d1064b015341aa03d5f02c0a3ab"
+                },
+                {
+                    "AssetPath": "Assets/Res/PNG/马蹄铁.png",
+                    "AssetGUID": "8b3da499291aa6541b544129c88b3210"
+                }
+            ],
+            "DependBundles": [
+                "share_assets_res_png.bundle"
+            ]
+        },
+        {
+            "Address": "",
+            "AssetPath": "Assets/Res/Fonts/msyh.ttc",
+            "AssetGUID": "b669a6255c1ae2647be4b44bb87c2dce",
+            "AssetTags": [],
+            "MainBundleName": "assets_res_fonts_msyh.bundle",
+            "MainBundleSize": 13642658,
+            "DependAssets": [],
+            "DependBundles": []
+        },
+        {
+            "Address": "",
+            "AssetPath": "Assets/Res/Fonts/msyhbd.ttc",
+            "AssetGUID": "cd44d75758ad76a4e8c0d82ab58d0278",
+            "AssetTags": [],
+            "MainBundleName": "assets_res_fonts_msyhbd.bundle",
+            "MainBundleSize": 11733999,
+            "DependAssets": [],
+            "DependBundles": []
+        },
+        {
+            "Address": "",
+            "AssetPath": "Assets/Res/Fonts/msyhl.ttc",
+            "AssetGUID": "561bf8d4389bd6c4289188b365c62764",
+            "AssetTags": [],
+            "MainBundleName": "assets_res_fonts_msyhl.bundle",
+            "MainBundleSize": 8242061,
+            "DependAssets": [],
+            "DependBundles": []
+        },
+        {
+            "Address": "",
+            "AssetPath": "Assets/Res/Fonts/msyhSDF.asset",
+            "AssetGUID": "55d477d412911a2418901198a2c03f8d",
+            "AssetTags": [],
+            "MainBundleName": "assets_res_fonts_msyhsdf.bundle",
+            "MainBundleSize": 8859737,
+            "DependAssets": [
+                {
+                    "AssetPath": "Assets/Res/Fonts/msyh.ttc",
+                    "AssetGUID": "b669a6255c1ae2647be4b44bb87c2dce"
+                },
+                {
+                    "AssetPath": "Assets/TextMesh Pro/Shaders/TMP_SDF.shader",
+                    "AssetGUID": "68e6db2ebdc24f95958faec2be5558d6"
+                }
+            ],
+            "DependBundles": [
+                "assets_res_fonts_msyh.bundle",
+                "unityshaders.bundle"
+            ]
+        },
+        {
+            "Address": "",
+            "AssetPath": "Assets/Res/Scene/AnimancerTest.unity",
+            "AssetGUID": "fe793cb400ac9ed4e822ddccc3748e4d",
+            "AssetTags": [],
+            "MainBundleName": "assets_res_scene_animancertest.bundle",
+            "MainBundleSize": 7821,
+            "DependAssets": [],
+            "DependBundles": [
+                "unityshaders.bundle"
+            ]
+        },
+        {
+            "Address": "",
+            "AssetPath": "Assets/Res/Scene/Load.unity",
+            "AssetGUID": "4f6b5f19dc0e9f040b9a8a4057f68743",
+            "AssetTags": [],
+            "MainBundleName": "assets_res_scene_load.bundle",
+            "MainBundleSize": 7405,
+            "DependAssets": [],
+            "DependBundles": [
+                "unityshaders.bundle"
+            ]
+        },
+        {
+            "Address": "",
+            "AssetPath": "Assets/Res/Scene/Main.unity",
+            "AssetGUID": "9403e0468efc5ce4db295e15d1aeb8c6",
+            "AssetTags": [],
+            "MainBundleName": "assets_res_scene_main.bundle",
+            "MainBundleSize": 7974,
+            "DependAssets": [],
+            "DependBundles": [
+                "unityshaders.bundle"
+            ]
+        },
+        {
+            "Address": "",
+            "AssetPath": "Assets/Res/Scene/MainCity.unity",
+            "AssetGUID": "b5d119e68b7e2f345a52f34152908e40",
+            "AssetTags": [],
+            "MainBundleName": "assets_res_scene_maincity.bundle",
+            "MainBundleSize": 8717,
+            "DependAssets": [],
+            "DependBundles": [
+                "unityshaders.bundle"
+            ]
+        },
+        {
+            "Address": "",
+            "AssetPath": "Assets/Res/Scene/TestGameLaunch.unity",
+            "AssetGUID": "8054e6a75956c7b4fa7ef062d61a1f6b",
+            "AssetTags": [],
+            "MainBundleName": "assets_res_scene_testgamelaunch.bundle",
+            "MainBundleSize": 8199,
+            "DependAssets": [],
+            "DependBundles": [
+                "unityshaders.bundle"
+            ]
+        },
+        {
+            "Address": "",
+            "AssetPath": "Assets/Res/Scene/TestLoadScene.unity",
+            "AssetGUID": "dbe10641e8b9d274a860056781085e7b",
+            "AssetTags": [],
+            "MainBundleName": "assets_res_scene_testloadscene.bundle",
+            "MainBundleSize": 9770,
+            "DependAssets": [],
+            "DependBundles": [
+                "unityshaders.bundle"
+            ]
+        },
+        {
+            "Address": "",
+            "AssetPath": "Assets/Res/Scene/TimeLineScene.unity",
+            "AssetGUID": "3b317308de0b72b4ab35d3c4ef2a1ab1",
+            "AssetTags": [],
+            "MainBundleName": "assets_res_scene_timelinescene.bundle",
+            "MainBundleSize": 7416,
+            "DependAssets": [],
+            "DependBundles": [
+                "unityshaders.bundle"
+            ]
+        },
+        {
+            "Address": "",
+            "AssetPath": "Assets/Res/UI/window.prefab",
+            "AssetGUID": "be239ba474d2f694e9f2016f1dd27d14",
+            "AssetTags": [],
+            "MainBundleName": "assets_res_ui_window.bundle",
+            "MainBundleSize": 3666,
+            "DependAssets": [],
+            "DependBundles": []
+        }
+    ],
+    "BundleInfos": [
+        {
+            "BundleName": "assets_res_atlas_test.bundle",
+            "FileName": "47d8f8e74e44ce8e9499480050a6ef36.bundle",
+            "FileHash": "47d8f8e74e44ce8e9499480050a6ef36",
+            "FileCRC": "cde0ff3c",
+            "FileSize": 382468,
+            "Encrypted": false,
+            "Tags": [],
+            "DependBundles": [
+                "share_assets_res_png.bundle"
+            ],
+            "ReferenceBundles": [
+                "share_assets_res_png.bundle"
+            ],
+            "BundleContents": [
+                {
+                    "AssetPath": "Assets/Res/Atlas/test.spriteatlas",
+                    "AssetGUID": "c7e494d3475b2f64a8eab0c85e7a688a"
+                }
+            ]
+        },
+        {
+            "BundleName": "assets_res_fonts_msyh.bundle",
+            "FileName": "5da1ad054bed7d327dd1cb36b5bf66c1.bundle",
+            "FileHash": "5da1ad054bed7d327dd1cb36b5bf66c1",
+            "FileCRC": "9cfca6b1",
+            "FileSize": 13642658,
+            "Encrypted": false,
+            "Tags": [],
+            "DependBundles": [],
+            "ReferenceBundles": [
+                "assets_res_fonts_msyhsdf.bundle"
+            ],
+            "BundleContents": [
+                {
+                    "AssetPath": "Assets/Res/Fonts/msyh.ttc",
+                    "AssetGUID": "b669a6255c1ae2647be4b44bb87c2dce"
+                }
+            ]
+        },
+        {
+            "BundleName": "assets_res_fonts_msyhbd.bundle",
+            "FileName": "9a8735275d528a202287d013cf78878c.bundle",
+            "FileHash": "9a8735275d528a202287d013cf78878c",
+            "FileCRC": "3382991e",
+            "FileSize": 11733999,
+            "Encrypted": false,
+            "Tags": [],
+            "DependBundles": [],
+            "ReferenceBundles": [],
+            "BundleContents": [
+                {
+                    "AssetPath": "Assets/Res/Fonts/msyhbd.ttc",
+                    "AssetGUID": "cd44d75758ad76a4e8c0d82ab58d0278"
+                }
+            ]
+        },
+        {
+            "BundleName": "assets_res_fonts_msyhl.bundle",
+            "FileName": "8298f0c245a9e6fef1643d7a79388bf5.bundle",
+            "FileHash": "8298f0c245a9e6fef1643d7a79388bf5",
+            "FileCRC": "67377624",
+            "FileSize": 8242061,
+            "Encrypted": false,
+            "Tags": [],
+            "DependBundles": [],
+            "ReferenceBundles": [],
+            "BundleContents": [
+                {
+                    "AssetPath": "Assets/Res/Fonts/msyhl.ttc",
+                    "AssetGUID": "561bf8d4389bd6c4289188b365c62764"
+                }
+            ]
+        },
+        {
+            "BundleName": "assets_res_fonts_msyhsdf.bundle",
+            "FileName": "a4e0e475e13f01f7ca9448d94bbc487f.bundle",
+            "FileHash": "a4e0e475e13f01f7ca9448d94bbc487f",
+            "FileCRC": "a6a77879",
+            "FileSize": 8859737,
+            "Encrypted": false,
+            "Tags": [],
+            "DependBundles": [
+                "assets_res_fonts_msyh.bundle",
+                "unityshaders.bundle"
+            ],
+            "ReferenceBundles": [],
+            "BundleContents": [
+                {
+                    "AssetPath": "Assets/Res/Fonts/msyhSDF.asset",
+                    "AssetGUID": "55d477d412911a2418901198a2c03f8d"
+                }
+            ]
+        },
+        {
+            "BundleName": "assets_res_scene_animancertest.bundle",
+            "FileName": "aab98bdf8f74425398a20dd9c507181c.bundle",
+            "FileHash": "aab98bdf8f74425398a20dd9c507181c",
+            "FileCRC": "edf5be2b",
+            "FileSize": 7821,
+            "Encrypted": false,
+            "Tags": [],
+            "DependBundles": [
+                "unityshaders.bundle"
+            ],
+            "ReferenceBundles": [],
+            "BundleContents": [
+                {
+                    "AssetPath": "Assets/Res/Scene/AnimancerTest.unity",
+                    "AssetGUID": "fe793cb400ac9ed4e822ddccc3748e4d"
+                }
+            ]
+        },
+        {
+            "BundleName": "assets_res_scene_load.bundle",
+            "FileName": "e68a2f474a52a335b531a303cb9e59e1.bundle",
+            "FileHash": "e68a2f474a52a335b531a303cb9e59e1",
+            "FileCRC": "4b3c7189",
+            "FileSize": 7405,
+            "Encrypted": false,
+            "Tags": [],
+            "DependBundles": [
+                "unityshaders.bundle"
+            ],
+            "ReferenceBundles": [],
+            "BundleContents": [
+                {
+                    "AssetPath": "Assets/Res/Scene/Load.unity",
+                    "AssetGUID": "4f6b5f19dc0e9f040b9a8a4057f68743"
+                }
+            ]
+        },
+        {
+            "BundleName": "assets_res_scene_main.bundle",
+            "FileName": "c0738a6d081b06b4e651f06529dd3787.bundle",
+            "FileHash": "c0738a6d081b06b4e651f06529dd3787",
+            "FileCRC": "3cf0b00b",
+            "FileSize": 7974,
+            "Encrypted": false,
+            "Tags": [],
+            "DependBundles": [
+                "unityshaders.bundle"
+            ],
+            "ReferenceBundles": [],
+            "BundleContents": [
+                {
+                    "AssetPath": "Assets/Res/Scene/Main.unity",
+                    "AssetGUID": "9403e0468efc5ce4db295e15d1aeb8c6"
+                }
+            ]
+        },
+        {
+            "BundleName": "assets_res_scene_maincity.bundle",
+            "FileName": "113db1692fae15d50fdb5b0793db8550.bundle",
+            "FileHash": "113db1692fae15d50fdb5b0793db8550",
+            "FileCRC": "dce607be",
+            "FileSize": 8717,
+            "Encrypted": false,
+            "Tags": [],
+            "DependBundles": [
+                "unityshaders.bundle"
+            ],
+            "ReferenceBundles": [],
+            "BundleContents": [
+                {
+                    "AssetPath": "Assets/Res/Scene/MainCity.unity",
+                    "AssetGUID": "b5d119e68b7e2f345a52f34152908e40"
+                }
+            ]
+        },
+        {
+            "BundleName": "assets_res_scene_testgamelaunch.bundle",
+            "FileName": "225782b6bba668f3417d1038ca83e178.bundle",
+            "FileHash": "225782b6bba668f3417d1038ca83e178",
+            "FileCRC": "030d5c9b",
+            "FileSize": 8199,
+            "Encrypted": false,
+            "Tags": [],
+            "DependBundles": [
+                "unityshaders.bundle"
+            ],
+            "ReferenceBundles": [],
+            "BundleContents": [
+                {
+                    "AssetPath": "Assets/Res/Scene/TestGameLaunch.unity",
+                    "AssetGUID": "8054e6a75956c7b4fa7ef062d61a1f6b"
+                }
+            ]
+        },
+        {
+            "BundleName": "assets_res_scene_testloadscene.bundle",
+            "FileName": "a0b0a901fd38183bd04103dfeefe69d5.bundle",
+            "FileHash": "a0b0a901fd38183bd04103dfeefe69d5",
+            "FileCRC": "660e7be0",
+            "FileSize": 9770,
+            "Encrypted": false,
+            "Tags": [],
+            "DependBundles": [
+                "unityshaders.bundle"
+            ],
+            "ReferenceBundles": [],
+            "BundleContents": [
+                {
+                    "AssetPath": "Assets/Res/Scene/TestLoadScene.unity",
+                    "AssetGUID": "dbe10641e8b9d274a860056781085e7b"
+                }
+            ]
+        },
+        {
+            "BundleName": "assets_res_scene_timelinescene.bundle",
+            "FileName": "bd2229e1359fba1f0f51ebdca78b873d.bundle",
+            "FileHash": "bd2229e1359fba1f0f51ebdca78b873d",
+            "FileCRC": "2360d49a",
+            "FileSize": 7416,
+            "Encrypted": false,
+            "Tags": [],
+            "DependBundles": [
+                "unityshaders.bundle"
+            ],
+            "ReferenceBundles": [],
+            "BundleContents": [
+                {
+                    "AssetPath": "Assets/Res/Scene/TimeLineScene.unity",
+                    "AssetGUID": "3b317308de0b72b4ab35d3c4ef2a1ab1"
+                }
+            ]
+        },
+        {
+            "BundleName": "assets_res_ui_window.bundle",
+            "FileName": "ecfbbceca01457bc5da45a940b4f96f6.bundle",
+            "FileHash": "ecfbbceca01457bc5da45a940b4f96f6",
+            "FileCRC": "c957252c",
+            "FileSize": 3666,
+            "Encrypted": false,
+            "Tags": [],
+            "DependBundles": [],
+            "ReferenceBundles": [],
+            "BundleContents": [
+                {
+                    "AssetPath": "Assets/Res/UI/window.prefab",
+                    "AssetGUID": "be239ba474d2f694e9f2016f1dd27d14"
+                }
+            ]
+        },
+        {
+            "BundleName": "share_assets_res_png.bundle",
+            "FileName": "45e187d8dddc5eaa50e8dd3afd1a3d53.bundle",
+            "FileHash": "45e187d8dddc5eaa50e8dd3afd1a3d53",
+            "FileCRC": "7a83dbed",
+            "FileSize": 20897,
+            "Encrypted": false,
+            "Tags": [],
+            "DependBundles": [
+                "assets_res_atlas_test.bundle"
+            ],
+            "ReferenceBundles": [
+                "assets_res_atlas_test.bundle"
+            ],
+            "BundleContents": [
+                {
+                    "AssetPath": "Assets/Res/PNG/+.png",
+                    "AssetGUID": "9c23d9241753c024c9dd49510b117b99"
+                },
+                {
+                    "AssetPath": "Assets/Res/PNG/下边条1.png",
+                    "AssetGUID": "a541d5cfeb3cb2a4b99a3a3222bde951"
+                },
+                {
+                    "AssetPath": "Assets/Res/PNG/主角 拆分 拷贝.png",
+                    "AssetGUID": "6db2b1d0b663afc418b7ddba5a494a64"
+                },
+                {
+                    "AssetPath": "Assets/Res/PNG/图层 12.png",
+                    "AssetGUID": "7adeb9e53d114a142941fdfb9a1e8cee"
+                },
+                {
+                    "AssetPath": "Assets/Res/PNG/图层 20 拷贝 2.png",
+                    "AssetGUID": "7d1397c197d41c6429ba1dc196624152"
+                },
+                {
+                    "AssetPath": "Assets/Res/PNG/图层 20 拷贝 4.png",
+                    "AssetGUID": "e02a89a08ea784945a4e337a963c5ecd"
+                },
+                {
+                    "AssetPath": "Assets/Res/PNG/图层 20 拷贝 5.png",
+                    "AssetGUID": "f0b49d3dfe2479f42a1f2f6807cdf8ae"
+                },
+                {
+                    "AssetPath": "Assets/Res/PNG/图层 23.png",
+                    "AssetGUID": "f2ab31ed6e054ca4c80099eb05a5e70e"
+                },
+                {
+                    "AssetPath": "Assets/Res/PNG/图层 32 拷贝 2.png",
+                    "AssetGUID": "d4271c1a0fc996b4ea398ede27f42a1a"
+                },
+                {
+                    "AssetPath": "Assets/Res/PNG/图层 32 拷贝 3.png",
+                    "AssetGUID": "8b4bad0bc6efeba4a8933e942d6e61d3"
+                },
+                {
+                    "AssetPath": "Assets/Res/PNG/图层 32 拷贝 4.png",
+                    "AssetGUID": "ef066d3a50a4e1545be5642d1cde8110"
+                },
+                {
+                    "AssetPath": "Assets/Res/PNG/图层 34.png",
+                    "AssetGUID": "52546b5a9bae6064f9e9fa8304e5a7d3"
+                },
+                {
+                    "AssetPath": "Assets/Res/PNG/图层 35.png",
+                    "AssetGUID": "77843f287cd78c246943481066416b45"
+                },
+                {
+                    "AssetPath": "Assets/Res/PNG/图层 36.png",
+                    "AssetGUID": "49d9a3bd1c4f10743bb96933498e91ad"
+                },
+                {
+                    "AssetPath": "Assets/Res/PNG/图层 39.png",
+                    "AssetGUID": "3dc90b7d641f42f408fdb23deddc5776"
+                },
+                {
+                    "AssetPath": "Assets/Res/PNG/图层 41.png",
+                    "AssetGUID": "9508370f7bd739c40980a941a6c42e02"
+                },
+                {
+                    "AssetPath": "Assets/Res/PNG/图层 43.png",
+                    "AssetGUID": "f671c63b0109aac4b8c798c9615c8ee5"
+                },
+                {
+                    "AssetPath": "Assets/Res/PNG/图层 5.png",
+                    "AssetGUID": "bc8720a6af2c9624aa2c5b1a11c2aad6"
+                },
+                {
+                    "AssetPath": "Assets/Res/PNG/图层 7 拷贝 2.png",
+                    "AssetGUID": "4d9796f6e3e049340b12c1e8ec0fea63"
+                },
+                {
+                    "AssetPath": "Assets/Res/PNG/图层 7 拷贝.png",
+                    "AssetGUID": "8def21c2d8015fd40883735af3de72ea"
+                },
+                {
+                    "AssetPath": "Assets/Res/PNG/图层 7.png",
+                    "AssetGUID": "ff05cd3f85b49574bb6ad06809f74e3f"
+                },
+                {
+                    "AssetPath": "Assets/Res/PNG/图层 727.png",
+                    "AssetGUID": "53ac0fc747adec444bb76b03ec543668"
+                },
+                {
+                    "AssetPath": "Assets/Res/PNG/图层 728.png",
+                    "AssetGUID": "253f7f2490a461645b8b6046b482db92"
+                },
+                {
+                    "AssetPath": "Assets/Res/PNG/图层 729.png",
+                    "AssetGUID": "132d05ebee32abc4285d463ed19746b6"
+                },
+                {
+                    "AssetPath": "Assets/Res/PNG/图层 730.png",
+                    "AssetGUID": "a6d7ffcc2c21bb34f999f8562dfd8ea9"
+                },
+                {
+                    "AssetPath": "Assets/Res/PNG/图层 731.png",
+                    "AssetGUID": "6d35b142f69c604478c71343146b8458"
+                },
+                {
+                    "AssetPath": "Assets/Res/PNG/图层 732.png",
+                    "AssetGUID": "245480185716bca4b93e55e61b51d5e7"
+                },
+                {
+                    "AssetPath": "Assets/Res/PNG/图层 733 拷贝 12.png",
+                    "AssetGUID": "2fb78f480bb34d44088f4fb8ee2fcd2d"
+                },
+                {
+                    "AssetPath": "Assets/Res/PNG/图层 733.png",
+                    "AssetGUID": "cfaa555e50337c141ae23ca5c7bf4651"
+                },
+                {
+                    "AssetPath": "Assets/Res/PNG/图层 8.png",
+                    "AssetGUID": "e8c7b3a799216de46880bf7793c62f00"
+                },
+                {
+                    "AssetPath": "Assets/Res/PNG/宠物图标 拷贝.png",
+                    "AssetGUID": "c5160744a6b51ad48b9d79710b55244f"
+                },
+                {
+                    "AssetPath": "Assets/Res/PNG/无装备底板.png",
+                    "AssetGUID": "e8b26a4052a982345bf80a2c0e6948c4"
+                },
+                {
+                    "AssetPath": "Assets/Res/PNG/时装_入口_图标.png",
+                    "AssetGUID": "02c4e4ae2f19069498c0bd48c76dbdc4"
+                },
+                {
+                    "AssetPath": "Assets/Res/PNG/武器图鉴 拷贝.png",
+                    "AssetGUID": "fb7a6c2a081db1648a3603c5821611e0"
+                },
+                {
+                    "AssetPath": "Assets/Res/PNG/矩形 697 拷贝 2.png",
+                    "AssetGUID": "24466e1d7f9e3134ea739f761eb1cd3d"
+                },
+                {
+                    "AssetPath": "Assets/Res/PNG/矩形 697 拷贝.png",
+                    "AssetGUID": "d70d5f41cb75d234db6543297372fcab"
+                },
+                {
+                    "AssetPath": "Assets/Res/PNG/矩形 697.png",
+                    "AssetGUID": "6a8362f337d1252409f998b03c6d79fc"
+                },
+                {
+                    "AssetPath": "Assets/Res/PNG/组 1.png",
+                    "AssetGUID": "9c9f02ac1f34f334c9f5636a947a3754"
+                },
+                {
+                    "AssetPath": "Assets/Res/PNG/组 11.png",
+                    "AssetGUID": "5798991f09b094a4e8e3ba67c47151e5"
+                },
+                {
+                    "AssetPath": "Assets/Res/PNG/组 111 拷贝 2.png",
+                    "AssetGUID": "521692bf979748d4bbceff02cbb817e2"
+                },
+                {
+                    "AssetPath": "Assets/Res/PNG/背景.png",
+                    "AssetGUID": "71a9240b3308dcf49b67f327e6f8ad59"
+                },
+                {
+                    "AssetPath": "Assets/Res/PNG/藏品ICON.png",
+                    "AssetGUID": "91b44b348e331c74f83714bf5ba40f61"
+                },
+                {
+                    "AssetPath": "Assets/Res/PNG/装备.png",
+                    "AssetGUID": "186d078adb58d014ab485b99061efd20"
+                },
+                {
+                    "AssetPath": "Assets/Res/PNG/详情.png",
+                    "AssetGUID": "c24a7c9936881784f92e3dd8f217676f"
+                },
+                {
+                    "AssetPath": "Assets/Res/PNG/锤子_材料.png",
+                    "AssetGUID": "80859d1064b015341aa03d5f02c0a3ab"
+                },
+                {
+                    "AssetPath": "Assets/Res/PNG/马蹄铁.png",
+                    "AssetGUID": "8b3da499291aa6541b544129c88b3210"
+                }
+            ]
+        },
+        {
+            "BundleName": "unityshaders.bundle",
+            "FileName": "23d84f3574f28923e8b064ce950af3b6.bundle",
+            "FileHash": "23d84f3574f28923e8b064ce950af3b6",
+            "FileCRC": "6b08589f",
+            "FileSize": 215258,
+            "Encrypted": false,
+            "Tags": [],
+            "DependBundles": [],
+            "ReferenceBundles": [
+                "assets_res_fonts_msyhsdf.bundle",
+                "assets_res_scene_animancertest.bundle",
+                "assets_res_scene_load.bundle",
+                "assets_res_scene_main.bundle",
+                "assets_res_scene_maincity.bundle",
+                "assets_res_scene_testgamelaunch.bundle",
+                "assets_res_scene_testloadscene.bundle",
+                "assets_res_scene_timelinescene.bundle"
+            ],
+            "BundleContents": [
+                {
+                    "AssetPath": "Assets/TextMesh Pro/Shaders/TMP_SDF.shader",
+                    "AssetGUID": "68e6db2ebdc24f95958faec2be5558d6"
+                }
+            ]
+        }
+    ],
+    "IndependAssets": []
+}
