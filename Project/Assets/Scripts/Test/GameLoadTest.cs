@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.U2D;
@@ -10,6 +11,11 @@ namespace Test
 {
     public class GameLoadTest : MonoBehaviour
     {
+        private void Awake()
+        {
+            ResManager.Instance.Initialize();
+        }
+
         private void Start()
         {
             GameUpdateManager.Instance.OnCompleteUpdate += () =>
@@ -23,7 +29,16 @@ namespace Test
             yield return ChangeScene();
             // 3. 示例：加载并实例化预制体
             yield return LoadAndInstantiatePrefab("Assets/Res/UI/window");
-            yield return LoadSprite();
+
+            
+            //yield return LoadSprite();
+            
+            StartTest2();
+        }
+
+        private async void StartTest2()
+        {
+            await LoadSpriteAsync();
         }
         
         /// <summary>
@@ -34,9 +49,13 @@ namespace Test
         {
             Debug.Log($"开始加载场景");
             string location = "Assets/Res/Scene/TestLoadScene";
+            
             var sceneMode = LoadSceneMode.Single;
             var physicsMode = LocalPhysicsMode.None;
             bool suspendLoad = false;
+            
+            
+            
             SceneHandle handle = YooAssets.LoadSceneAsync(location, sceneMode, physicsMode, suspendLoad);
             yield return handle;
             // 检查加载结果
@@ -54,6 +73,10 @@ namespace Test
         private IEnumerator LoadSprite()
         {
             string location = "Assets/Res/Atlas/test.spriteatlas";
+
+
+            ResManager.Instance.GetSpriteAsync(location);
+            
             AssetHandle handle = YooAssets.LoadAssetAsync<SpriteAtlas>(location);
             yield return handle;
         
@@ -71,6 +94,35 @@ namespace Test
             {
                 Debug.LogError($"图集加载失败, 错误: {handle.LastError}");
             }
+        }
+        
+        private async UniTask LoadSpriteAsync()
+        {
+            string location = "Assets/Res/Atlas/test.spriteatlas";
+
+            var sprite = await ResManager.Instance.GetSpriteFromAtlasAsync(location,"主角 拆分 拷贝");
+            
+            if(sprite == null)
+                return;
+            
+            var img = GameObject.Find("Canvas/window/Image").GetComponent<Image>();
+            
+            img.sprite = sprite;
+            img.SetNativeSize();
+            
+            // if (handle.Status == EOperationStatus.Succeed)
+            // {
+            //     Debug.Log($"图集加载成功:");
+            //     var spriteAtals = handle.AssetObject as SpriteAtlas;
+            //     Sprite sprite = spriteAtals.GetSprite("主角 拆分 拷贝");
+            //     var img = GameObject.Find("Canvas/window/Image").GetComponent<Image>();
+            //     img.sprite = sprite;
+            //     img.SetNativeSize();
+            // }
+            // else
+            // {
+            //     Debug.LogError($"图集加载失败, 错误: {handle.LastError}");
+            // }
         }
         
         /// <summary>
