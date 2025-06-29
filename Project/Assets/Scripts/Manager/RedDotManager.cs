@@ -53,7 +53,7 @@ public class RedDotManager:SingletonManager<RedDotManager> , IGeneric
 {
     private Dictionary<int, TreeNode> Nodes = new Dictionary<int, TreeNode>();
 
- 
+   
 
     public override void Initialize()
     {
@@ -184,7 +184,6 @@ public class RedDotManager:SingletonManager<RedDotManager> , IGeneric
             LogNode(child, depth + 1);
         }
     }
-
     private TreeNode GetOrCreateNode(int[] nodes)
     {
         if (!Nodes.TryGetValue(nodes[0], out var node))
