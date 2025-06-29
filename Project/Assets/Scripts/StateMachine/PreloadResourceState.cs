@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using cfg.Bean;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 
@@ -23,6 +24,7 @@ public class PreloadResourceState : IGameState
         
         try
         {
+            await TableManager.Instance.LoadConfiguration();
             // 显示加载UI
             await ShowLoadingUIAsync();
             

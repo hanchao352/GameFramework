@@ -56,7 +56,7 @@ public class TableManager : SingletonManager<TableManager>, IGeneric
 
     public override void Initialize()
     {
-        LoadConfiguration().Forget();
+      
     }
 
 

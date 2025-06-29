@@ -17,6 +17,15 @@ public partial class Tables
     public Model.TbStartReward TbStartReward {get; private set; }
     public Model.TbEndReward TbEndReward {get; private set; }
     public Model.TBItem TBItem {get; private set; }
+    public Model.ViewConfig_ViewConfigModel ViewConfigViewConfigModel {get; private set; }
+    public Model.Art_ArtUIModel ArtArtUIModel {get; private set; }
+    public Model.Art_ArtSpriteModel ArtArtSpriteModel {get; private set; }
+    public Model.Art_ArtAtlasModel ArtArtAtlasModel {get; private set; }
+    public Model.Art_ArtMapModel ArtArtMapModel {get; private set; }
+    public Model.Art_ArtEffectModel ArtArtEffectModel {get; private set; }
+    public Model.Art_ArtSoundModel ArtArtSoundModel {get; private set; }
+    public Model.Art_ArtModelModel ArtArtModelModel {get; private set; }
+    public Model.Art_ArtBattleEffectModel ArtArtBattleEffectModel {get; private set; }
 
 
     public Tables()
@@ -29,6 +38,15 @@ public partial class Tables
         TbStartReward = new Model.TbStartReward(loader("model_tbstartreward"));
         TbEndReward = new Model.TbEndReward(loader("model_tbendreward"));
         TBItem = new Model.TBItem(loader("model_tbitem"));
+        ViewConfigViewConfigModel = new Model.ViewConfig_ViewConfigModel(loader("model_viewconfig_viewconfigmodel"));
+        ArtArtUIModel = new Model.Art_ArtUIModel(loader("model_art_artuimodel"));
+        ArtArtSpriteModel = new Model.Art_ArtSpriteModel(loader("model_art_artspritemodel"));
+        ArtArtAtlasModel = new Model.Art_ArtAtlasModel(loader("model_art_artatlasmodel"));
+        ArtArtMapModel = new Model.Art_ArtMapModel(loader("model_art_artmapmodel"));
+        ArtArtEffectModel = new Model.Art_ArtEffectModel(loader("model_art_arteffectmodel"));
+        ArtArtSoundModel = new Model.Art_ArtSoundModel(loader("model_art_artsoundmodel"));
+        ArtArtModelModel = new Model.Art_ArtModelModel(loader("model_art_artmodelmodel"));
+        ArtArtBattleEffectModel = new Model.Art_ArtBattleEffectModel(loader("model_art_artbattleeffectmodel"));
         ResolveRef();
     }
 
@@ -37,6 +55,15 @@ public partial class Tables
         TbStartReward = new Model.TbStartReward(await loader("model_tbstartreward"));
         TbEndReward = new Model.TbEndReward(await loader("model_tbendreward"));
         TBItem = new Model.TBItem(await loader("model_tbitem"));
+        ViewConfigViewConfigModel = new Model.ViewConfig_ViewConfigModel(await loader("model_viewconfig_viewconfigmodel"));
+        ArtArtUIModel = new Model.Art_ArtUIModel(await loader("model_art_artuimodel"));
+        ArtArtSpriteModel = new Model.Art_ArtSpriteModel(await loader("model_art_artspritemodel"));
+        ArtArtAtlasModel = new Model.Art_ArtAtlasModel(await loader("model_art_artatlasmodel"));
+        ArtArtMapModel = new Model.Art_ArtMapModel(await loader("model_art_artmapmodel"));
+        ArtArtEffectModel = new Model.Art_ArtEffectModel(await loader("model_art_arteffectmodel"));
+        ArtArtSoundModel = new Model.Art_ArtSoundModel(await loader("model_art_artsoundmodel"));
+        ArtArtModelModel = new Model.Art_ArtModelModel(await loader("model_art_artmodelmodel"));
+        ArtArtBattleEffectModel = new Model.Art_ArtBattleEffectModel(await loader("model_art_artbattleeffectmodel"));
         ResolveRef();
     }
     
@@ -45,6 +72,15 @@ public partial class Tables
         TbStartReward.ResolveRef(this);
         TbEndReward.ResolveRef(this);
         TBItem.ResolveRef(this);
+        ViewConfigViewConfigModel.ResolveRef(this);
+        ArtArtUIModel.ResolveRef(this);
+        ArtArtSpriteModel.ResolveRef(this);
+        ArtArtAtlasModel.ResolveRef(this);
+        ArtArtMapModel.ResolveRef(this);
+        ArtArtEffectModel.ResolveRef(this);
+        ArtArtSoundModel.ResolveRef(this);
+        ArtArtModelModel.ResolveRef(this);
+        ArtArtBattleEffectModel.ResolveRef(this);
     }
 }
 
