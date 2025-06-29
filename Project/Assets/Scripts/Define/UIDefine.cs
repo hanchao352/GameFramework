@@ -14,24 +14,32 @@ public static class UIName
 {
         public const int UILogin = 1001;
         public const int UITips = 1002;
+        public const int UIMain = 1003;
 }
 public static class UIDefine
 {
         public static readonly Dictionary<int, ViewInfo> _uiViews = new Dictionary<int, ViewInfo>()
         {
-                // 登录界面，单例，Normal层
-                { UIName.UILogin, new ViewInfo {
-                        ViewId          = UIName.UILogin,
-                        ViewType        = typeof(UILoginView),
+                // // 登录界面，单例，Normal层
+                // { UIName.UILogin, new ViewInfo {
+                //         ViewId          = UIName.UILogin,
+                //         ViewType        = typeof(UILoginView),
+                //         IsMultiInstance = false,
+                //         Layer           = UILayer.Normal
+                // }},
+                // // 提示界面，多例，Tips层
+                // { UIName.UITips, new ViewInfo {
+                //         ViewId          = UIName.UITips,
+                //         ViewType        = typeof(UITipsView),
+                //         IsMultiInstance = true,
+                //         Layer           = UILayer.Tips
+                // }},
+                // // 主界面，单例，Normal层
+                { UIName.UIMain, new ViewInfo {
+                        ViewId          = UIName.UIMain,
+                        ViewType        = typeof(MainUIView),
                         IsMultiInstance = false,
                         Layer           = UILayer.Normal
-                }},
-                // 提示界面，多例，Tips层
-                { UIName.UITips, new ViewInfo {
-                        ViewId          = UIName.UITips,
-                        ViewType        = typeof(UITipsView),
-                        IsMultiInstance = true,
-                        Layer           = UILayer.Tips
                 }},
             
         };
