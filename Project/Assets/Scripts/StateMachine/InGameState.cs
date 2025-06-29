@@ -44,7 +44,7 @@ public class InGameState : IGameState
             await InitializeGameLogicAsync(context);
             
             Debug.Log("游戏开始运行");
-            
+            UIManager.Instance.ShowView(UIName.UIMain);
             context.SetData("GameStartTime", DateTime.Now);
         }
         catch (Exception e)
