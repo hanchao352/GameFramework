@@ -38,7 +38,7 @@ public class UIManager : SingletonManager<UIManager>, IGeneric
             typeof(CanvasScaler),
             typeof(GraphicRaycaster)
         ).transform;
-
+        UIRoot.position = Vector3.zero;
         var rootCanvas = UIRoot.GetComponent<Canvas>();
         var scaler     = UIRoot.GetComponent<CanvasScaler>();
 
@@ -50,6 +50,7 @@ public class UIManager : SingletonManager<UIManager>, IGeneric
         // 2) 创建 UI 摄像机
         var camGO = new GameObject("UICamera");
         camGO.transform.SetParent(UIRoot, false);
+        camGO.transform.position = new Vector3(0, 0, -100); // 确保摄像机在 UI 前面
         var cam = camGO.AddComponent<Camera>();
         cam.clearFlags          = CameraClearFlags.Depth;
         cam.depth               = 100;
@@ -59,7 +60,7 @@ public class UIManager : SingletonManager<UIManager>, IGeneric
         cam.nearClipPlane       = 0.3f;
         cam.farClipPlane        = 1000f;
         cam.useOcclusionCulling = false;
-
+        
         // 3) 事件系统
         UIRoot.gameObject.AddComponent<EventSystem>();
         UIRoot.gameObject.AddComponent<StandaloneInputModule>();
@@ -75,7 +76,11 @@ public class UIManager : SingletonManager<UIManager>, IGeneric
             _currentMaxOrders[layer] = i * LAYER_SPACING;
             _activePerLayer[layer]   = new List<UIBase>();
 
-            var go = new GameObject(layer.ToString());
+            var go = new GameObject(layer.ToString()); 
+            var rect = go.AddComponent<RectTransform>();
+            rect.anchorMin = Vector2.zero;
+            rect.anchorMax = Vector2.one;
+            rect.pivot = new Vector2(0.5f, 0.5f);
             go.transform.SetParent(UIRoot, false);
             go.layer = LayerMask.NameToLayer("UI");
 
