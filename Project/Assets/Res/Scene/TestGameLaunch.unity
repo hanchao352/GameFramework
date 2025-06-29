@@ -339,6 +339,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   packageName: DefaultPackage
   assetPath: Assets/Res/UI/window
+  bundlePath: Assets/Res/UI/UIMain/UIMain
 --- !u!4 &841919607
 Transform:
   m_ObjectHideFlags: 0

@@ -13,6 +13,7 @@ public class Game : MonoBehaviour
     // 在编辑器中设置这些参数
     public string packageName = "DefaultPackage"; // 资源包名称
     public string assetPath = "Assets/Res/UI/window";  // 预制体资源路径
+    public string bundlePath = "Assets/Res/UI/UIMain/UIMain";
 
     private ResourcePackage _package; // YooAsset资源包
 
@@ -27,10 +28,44 @@ public class Game : MonoBehaviour
         yield return ChangeScene();
         
         // 3. 示例：加载并实例化预制体
-        yield return LoadAndInstantiatePrefab(assetPath);
+       // yield return LoadAndInstantiatePrefab(assetPath);
 
-        yield return LoadSprite();
+        // yield return LoadSprite();
+        yield return TestLoad();
     }
+
+
+    private IEnumerator TestLoad()
+    {
+        Debug.Log($"开始加载预制体: {bundlePath}");
+        
+        // 创建资源加载任务
+        var assetHandle = _package.LoadAssetAsync<GameObject>(bundlePath);
+        
+        // 等待预制体加载完成
+        yield return assetHandle;
+        
+        if (assetHandle.Status == EOperationStatus.Succeed)
+        {
+            var root = GameObject.Find("Canvas").transform;
+            // 实例化游戏对象
+            GameObject prefab = assetHandle.AssetObject as GameObject;
+            if (prefab != null)
+            {
+                var go = Instantiate(prefab,root);
+                go.name = prefab.name;
+                Debug.Log($"预制体实例化成功: {assetPath}");
+            }
+        }
+        else
+        {
+            Debug.LogError($"预制体加载失败: {assetPath}, {assetHandle.LastError}");
+        }
+        
+        // 释放资源句柄（实例化后不再需要）
+        assetHandle.Release();
+    }
+    
 
     private IEnumerator LoadSprite()
     {
