@@ -8,20 +8,35 @@
 //------------------------------------------------------------------------------
 
 using Luban;
+using Cysharp.Threading.Tasks;
 
 namespace cfg
 {
 public partial class Tables
 {
-    public Model.TbStartReward TbStartReward {get; }
-    public Model.TbEndReward TbEndReward {get; }
-    public Model.TBItem TBItem {get; }
+    public Model.TbStartReward TbStartReward {get; private set; }
+    public Model.TbEndReward TbEndReward {get; private set; }
+    public Model.TBItem TBItem {get; private set; }
+
+
+    public Tables()
+    {
+        
+    }
 
     public Tables(System.Func<string, ByteBuf> loader)
     {
         TbStartReward = new Model.TbStartReward(loader("model_tbstartreward"));
         TbEndReward = new Model.TbEndReward(loader("model_tbendreward"));
         TBItem = new Model.TBItem(loader("model_tbitem"));
+        ResolveRef();
+    }
+
+    public async UniTask InitializeAsync(System.Func<string, UniTask<ByteBuf>> loader)
+    {
+        TbStartReward = new Model.TbStartReward(await loader("model_tbstartreward"));
+        TbEndReward = new Model.TbEndReward(await loader("model_tbendreward"));
+        TBItem = new Model.TBItem(await loader("model_tbitem"));
         ResolveRef();
     }
     
@@ -34,3 +49,4 @@ public partial class Tables
 }
 
 }
+
