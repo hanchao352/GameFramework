@@ -102,7 +102,7 @@ public class CheckUpdateState : IGameState
     private async UniTask<bool> CheckVersionAsync()
     {
         Debug.Log("正在检查版本信息...");
-        
+        return false;
         try
         {
             string localVersion = Application.version;

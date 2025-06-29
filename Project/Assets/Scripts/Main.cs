@@ -1,4 +1,5 @@
 using Cysharp.Threading.Tasks;
+using Test;
 using UnityEngine;
 
 
@@ -109,6 +110,8 @@ public class Main : MonoBehaviour
         
         // 注册所有游戏状态
         RegisterGameStates();
+
+        await GameUpdateManager.Instance.UpdateCoroutine();
         
         _isInitialized = true;
         

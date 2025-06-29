@@ -52,10 +52,14 @@ public abstract class UIBase : IViewGeneric
     private async UniTask<GameObject> CreateRootAsync(CancellationToken cancellationToken)
     {
         
-        await UniTask.Delay(1000, cancellationToken: cancellationToken);
+        //await UniTask.Delay(1000, cancellationToken: cancellationToken);
         
         // 创建UI根对象
-        return new GameObject($"{GetType().Name}_Root");
+        //return new GameObject($"{GetType().Name}_Root");
+        var viewConfig = TableManager.Instance.ConfigTables.ViewConfigViewConfigModel.Get(viewInfo.ViewId);
+        var artConfig = TableManager.Instance.ConfigTables.ArtArtUIModel.Get(viewConfig.Path);
+        var path = artConfig.Path;
+        return await ResManager.Instance.GetGameObjectAsync(path,UIManager.Instance.UIRoot) ;
     }
 
     // 添加取消加载的方法

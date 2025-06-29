@@ -14,7 +14,7 @@ public static class UIName
 {
         public const int UILogin = 1001;
         public const int UITips = 1002;
-        public const int UIMain = 1003;
+        public const int UIMain = 1;
 }
 public static class UIDefine
 {

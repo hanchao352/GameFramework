@@ -11,7 +11,7 @@ namespace Test
     {
         [Header("更新配置")]
         [SerializeField] private string packageName = "DefaultPackage";
-        [SerializeField] private EPlayMode playMode = EPlayMode.HostPlayMode;
+        [SerializeField] private EPlayMode playMode = EPlayMode.EditorSimulateMode;
         private string hostServerURL = "http://localhost:3000/files";
         
         
@@ -33,10 +33,10 @@ namespace Test
         protected override void Start()
         {
             Initialize();
-            StartCoroutine(UpdateCoroutine());
+            //StartCoroutine(UpdateCoroutine());
         }
 
-        private IEnumerator UpdateCoroutine()
+        public IEnumerator UpdateCoroutine()
         {
             InitializeYooAsset();
             
