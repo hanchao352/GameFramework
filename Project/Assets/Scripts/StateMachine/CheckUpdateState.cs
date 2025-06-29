@@ -2,6 +2,10 @@
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 
+
+/// <summary>
+/// 检查更新状态
+/// </summary>
 public class CheckUpdateState : IGameState
 {
     private readonly IGameStateMachine _stateMachine;
@@ -46,58 +50,29 @@ public class CheckUpdateState : IGameState
                 }
                 else
                 {
-                    // 用户选择跳过更新
+                    // 用户选择跳过更新，直接进入初始化
                     Debug.Log("用户选择跳过更新");
-                    await _stateMachine.ChangeStateAsync(GameStateId.PreloadResource);
+                    await _stateMachine.ChangeStateAsync(GameStateId.Initialize);
                 }
             }
             else
             {
                 Debug.Log("当前已是最新版本");
-                await _stateMachine.ChangeStateAsync(GameStateId.PreloadResource);
+                // 直接进入初始化状态
+                await _stateMachine.ChangeStateAsync(GameStateId.Initialize);
             }
         }
         catch (Exception e)
         {
             Debug.LogError($"检查更新失败: {e}");
             // 检查更新失败，继续进入游戏
-            await _stateMachine.ChangeStateAsync(GameStateId.PreloadResource);
+            await _stateMachine.ChangeStateAsync(GameStateId.Initialize);
         }
     }
 
     public void OnUpdate(float deltaTime, StateContext context)
     {
-        // 更新所有Manager
-        if (context.Managers != null)
-        {
-            foreach (var manager in context.Managers)
-            {
-                try
-                {
-                    manager.Update(deltaTime);
-                }
-                catch (Exception e)
-                {
-                    Debug.LogError($"Manager Update失败 - {manager.GetType().Name}: {e.Message}");
-                }
-            }
-        }
-        
-        // 更新所有Mod
-        if (context.Mods != null)
-        {
-            foreach (var mod in context.Mods)
-            {
-                try
-                {
-                    mod.Update(deltaTime);
-                }
-                catch (Exception e)
-                {
-                    Debug.LogError($"Mod Update失败 - {mod.GetType().Name}: {e.Message}");
-                }
-            }
-        }
+        // 检查更新状态时还没有初始化Manager和Mod，所以不需要更新它们
     }
 
     public async UniTask OnExitAsync(StateContext context)
@@ -130,16 +105,12 @@ public class CheckUpdateState : IGameState
         
         try
         {
-            // TODO: 实际的版本检查逻辑
-            // 1. 获取本地版本号
             string localVersion = Application.version;
             Debug.Log($"本地版本: {localVersion}");
             
-            // 2. 请求服务器版本号
             string remoteVersion = await GetRemoteVersionAsync();
             Debug.Log($"远程版本: {remoteVersion}");
             
-            // 3. 比较版本
             bool needUpdate = CompareVersion(localVersion, remoteVersion);
             
             return needUpdate;
@@ -154,7 +125,6 @@ public class CheckUpdateState : IGameState
     private async UniTask<string> GetRemoteVersionAsync()
     {
         // TODO: 从服务器获取版本信息
-        // 这里模拟网络请求
         await UniTask.Delay(1000);
         
         // 模拟返回一个版本号
@@ -171,7 +141,6 @@ public class CheckUpdateState : IGameState
         }
         catch
         {
-            // 版本号格式错误，默认不需要更新
             return false;
         }
     }
@@ -179,9 +148,6 @@ public class CheckUpdateState : IGameState
     private async UniTask<bool> ShowUpdateConfirmDialogAsync()
     {
         Debug.Log("显示更新确认对话框");
-        
-        // TODO: 显示更新确认UI
-        // 这里模拟用户选择
         await UniTask.Delay(500);
         
         // 模拟有80%的概率选择更新
@@ -191,7 +157,6 @@ public class CheckUpdateState : IGameState
     private long GetUpdateSize()
     {
         // TODO: 获取实际的更新包大小
-        // 这里返回模拟值（100MB）
-        return 100 * 1024 * 1024;
+        return 100 * 1024 * 1024; // 100MB
     }
 }

@@ -9,7 +9,6 @@ using UnityEngine;
 public class Main : MonoBehaviour
 {
     private IGameStateMachine _gameStateMachine;
-    private InitializeState _initializeState;
     private bool _isInitialized;
 
     private void Awake()
@@ -34,7 +33,7 @@ public class Main : MonoBehaviour
         // 初始化游戏状态机
         await InitializeGameStateMachineAsync();
         
-        // 启动游戏流程 - 所有的Manager和Mod初始化都在InitializeState中自动进行
+        // 启动游戏流程 - 从检查更新开始
         await StartGameFlowAsync();
     }
 
@@ -48,39 +47,28 @@ public class Main : MonoBehaviour
 
     private void OnApplicationPause(bool pauseStatus)
     {
-        Debug.Log($"应用程序暂停状态: {pauseStatus}");
-        
-        if (pauseStatus)
+        // 可以通过Context通知所有Manager和Mod
+        if (_gameStateMachine?.Context != null)
         {
-            // 游戏暂停时的处理
-            // TODO: 保存游戏状态
-            // TODO: 暂停音频
-            // TODO: 断开网络连接（如果需要）
-        }
-        else
-        {
-            // 游戏恢复时的处理
-            // TODO: 恢复音频
-            // TODO: 重新连接网络（如果需要）
-            // TODO: 刷新游戏状态
+            _gameStateMachine.Context.SetData("IsPaused", pauseStatus);
         }
     }
 
     private void OnApplicationFocus(bool hasFocus)
     {
-        Debug.Log($"应用程序焦点状态: {hasFocus}");
         
-        if (!hasFocus)
+        // 可以通过Context通知所有Manager和Mod
+        if (_gameStateMachine?.Context != null)
         {
-            // 失去焦点时的处理
-            // TODO: 可能需要暂停某些操作
+            _gameStateMachine.Context.SetData("HasFocus", hasFocus);
         }
     }
 
     private void OnDestroy()
     {
         Debug.Log("Main对象被销毁");
-        // TODO: 清理资源
+        // 清理Context
+        _gameStateMachine?.Context?.Clear();
     }
 
     private void ConfigureApplication()
@@ -110,9 +98,6 @@ public class Main : MonoBehaviour
         Debug.unityLogger.logEnabled = true;
         Debug.unityLogger.filterLogType = LogType.Warning;
 #endif
-        
-        // TODO: 初始化自定义日志系统
-        // Logger.Initialize();
     }
 
     private async UniTask InitializeGameStateMachineAsync()
@@ -132,13 +117,10 @@ public class Main : MonoBehaviour
 
     private void RegisterGameStates()
     {
-        // 创建并保存InitializeState的引用
-        _initializeState = new InitializeState(_gameStateMachine);
-        
-        // 注册所有游戏状态
-        _gameStateMachine.RegisterState(_initializeState);
+        // 按照新的顺序注册所有游戏状态
         _gameStateMachine.RegisterState(new CheckUpdateState(_gameStateMachine));
         _gameStateMachine.RegisterState(new UpdateResourceState(_gameStateMachine));
+        _gameStateMachine.RegisterState(new InitializeState(_gameStateMachine));
         _gameStateMachine.RegisterState(new PreloadResourceState(_gameStateMachine));
         _gameStateMachine.RegisterState(new InGameState(_gameStateMachine));
         _gameStateMachine.RegisterState(new ExitState());
@@ -150,18 +132,17 @@ public class Main : MonoBehaviour
     {
         try
         {
-            // 从初始化状态开始 - 所有Manager和Mod的自动发现和初始化都在这里进行
-            await _gameStateMachine.ChangeStateAsync(GameStateId.Initialize);
+            // 从检查更新状态开始
+            await _gameStateMachine.ChangeStateAsync(GameStateId.CheckUpdate);
         }
         catch (System.Exception e)
         {
             Debug.LogError($"游戏启动失败: {e}");
             
-            // 显示错误对话框
 #if UNITY_EDITOR
-            UnityEditor.EditorUtility.DisplayDialog("启动错误", $"游戏启动失败:\n{e.Message}", "确定");
+            UnityEditor.EditorApplication.isPlaying = false;
 #else
-            // TODO: 显示游戏内错误UI
+            Application.Quit();
 #endif
         }
     }
@@ -175,17 +156,10 @@ public class Main : MonoBehaviour
     }
 
     /// <summary>
-    /// 请求切换游戏状态（供其他系统调用）
+    /// 获取状态上下文（供其他系统使用）
     /// </summary>
-    public async UniTask RequestChangeStateAsync(GameStateId targetState)
+    public StateContext GetStateContext()
     {
-        if (_gameStateMachine != null && _isInitialized)
-        {
-            await _gameStateMachine.ChangeStateAsync(targetState);
-        }
-        else
-        {
-            Debug.LogWarning("游戏状态机尚未初始化，无法切换状态");
-        }
+        return _gameStateMachine?.Context;
     }
 }

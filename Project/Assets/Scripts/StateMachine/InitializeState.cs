@@ -22,7 +22,6 @@ public class InitializeState : IGameState
         
         try
         {
-          
             
             // 1. 自动发现并初始化所有Manager
             var managers = await InitializeAllManagersAsync();
@@ -43,7 +42,7 @@ public class InitializeState : IGameState
             // 也可以保存其他数据到Context
             context.SetData("InitializeTime", DateTime.Now);
             context.SetData("GameVersion", Application.version);
-            await _stateMachine.ChangeStateAsync(GameStateId.CheckUpdate);
+            await _stateMachine.ChangeStateAsync(GameStateId.PreloadResource);
             Debug.Log("=== 游戏初始化完成 ===");
         }
         catch (Exception e)

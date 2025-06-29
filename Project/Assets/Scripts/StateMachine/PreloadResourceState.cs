@@ -233,12 +233,6 @@ public class PreloadResourceState : IGameState
         // 加载游戏配置
         await LoadGameConfigAsync();
         
-        // 初始化玩家数据
-        await InitializePlayerDataAsync();
-        
-        // 加载存档（如果有）
-        await LoadSaveDataAsync();
-        
         // 将游戏数据保存到Context
         context.SetData("GameInitialized", true);
         
@@ -252,19 +246,7 @@ public class PreloadResourceState : IGameState
         await UniTask.Delay(100);
     }
 
-    private async UniTask InitializePlayerDataAsync()
-    {
-        Debug.Log("初始化玩家数据...");
-        // TODO: 初始化玩家数据
-        await UniTask.Delay(100);
-    }
-
-    private async UniTask LoadSaveDataAsync()
-    {
-        Debug.Log("加载存档数据...");
-        // TODO: 加载玩家存档
-        await UniTask.Delay(100);
-    }
+    
 
     private async UniTask ShowLoadingUIAsync()
     {
