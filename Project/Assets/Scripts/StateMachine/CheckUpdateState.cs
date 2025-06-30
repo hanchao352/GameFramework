@@ -1,6 +1,7 @@
 ﻿using System;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
+using YooAsset;
 
 
 /// <summary>
@@ -10,6 +11,7 @@ public class CheckUpdateState : IGameState
 {
     private readonly IGameStateMachine _stateMachine;
     private bool _hasUpdate;
+    private GameObject versionView;
     
     public GameStateId StateId => GameStateId.CheckUpdate;
 
@@ -89,6 +91,8 @@ public class CheckUpdateState : IGameState
     {
         Debug.Log("显示检查更新UI");
         // TODO: 显示检查更新的UI界面
+        GameObject prefab = Resources.Load<GameObject>("VersionView");
+        versionView = GameObject.Instantiate(prefab);
         await UniTask.Delay(100);
     }
 
@@ -96,6 +100,8 @@ public class CheckUpdateState : IGameState
     {
         Debug.Log("隐藏检查更新UI");
         // TODO: 隐藏检查更新的UI界面
+        GameObject.Destroy(versionView);
+        versionView = null;
         await UniTask.Delay(100);
     }
 
